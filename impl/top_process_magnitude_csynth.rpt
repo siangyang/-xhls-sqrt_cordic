@@ -1,0 +1,1167 @@
+
+
+================================================================
+== Vivado HLS Report for 'top_process_magnitude'
+================================================================
+* Date:           Tue Dec 22 21:02:32 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        sqrt_CORDIC
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 3.702 ns |   0.63 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       86|       86| 0.430 us | 0.430 us |   86|   86|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------+----------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                  |                      |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |             Instance             |        Module        |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +----------------------------------+----------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_func1_process_magnit_fu_4624  |func1_process_magnit  |       85|       85| 0.425 us | 0.425 us |   85|   85|   none  |
+        |grp_func4_process_magnit_fu_5012  |func4_process_magnit  |       85|       85| 0.425 us | 0.425 us |   85|   85|   none  |
+        |grp_func2_process_magnit_fu_5400  |func2_process_magnit  |       85|       85| 0.425 us | 0.425 us |   85|   85|   none  |
+        |grp_func3_process_magnit_fu_5788  |func3_process_magnit  |       85|       85| 0.425 us | 0.425 us |   85|   85|   none  |
+        +----------------------------------+----------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|      2|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        0|      8|   22318|  14435|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|     15|    -|
+|Register         |        -|      -|       6|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      8|   22324|  14452|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      3|      20|     27|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------+----------------------+---------+-------+------+------+-----+
+    |             Instance             |        Module        | BRAM_18K| DSP48E|  FF  |  LUT | URAM|
+    +----------------------------------+----------------------+---------+-------+------+------+-----+
+    |grp_func1_process_magnit_fu_4624  |func1_process_magnit  |        0|      2|  5578|  3610|    0|
+    |grp_func2_process_magnit_fu_5400  |func2_process_magnit  |        0|      2|  5580|  3612|    0|
+    |grp_func3_process_magnit_fu_5788  |func3_process_magnit  |        0|      2|  5580|  3610|    0|
+    |grp_func4_process_magnit_fu_5012  |func4_process_magnit  |        0|      2|  5580|  3603|    0|
+    +----------------------------------+----------------------+---------+-------+------+------+-----+
+    |Total                             |                      |        0|      8| 22318| 14435|    0|
+    +----------------------------------+----------------------+---------+-------+------+------+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |          Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |ap_block_state2_on_subcall_done  |    or    |      0|  0|   2|           1|           1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |Total                            |          |      0|  0|   2|           1|           1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------+----+-----------+-----+-----------+
+    |    Name   | LUT| Input Size| Bits| Total Bits|
+    +-----------+----+-----------+-----+-----------+
+    |ap_NS_fsm  |  15|          3|    1|          3|
+    +-----------+----+-----------+-----+-----------+
+    |Total      |  15|          3|    1|          3|
+    +-----------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------------------+---+----+-----+-----------+
+    |                      Name                     | FF| LUT| Bits| Const Bits|
+    +-----------------------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                                      |  2|   0|    2|          0|
+    |grp_func1_process_magnit_fu_4624_ap_start_reg  |  1|   0|    1|          0|
+    |grp_func2_process_magnit_fu_5400_ap_start_reg  |  1|   0|    1|          0|
+    |grp_func3_process_magnit_fu_5788_ap_start_reg  |  1|   0|    1|          0|
+    |grp_func4_process_magnit_fu_5012_ap_start_reg  |  1|   0|    1|          0|
+    +-----------------------------------------------+---+----+-----+-----------+
+    |Total                                          |  6|   0|    6|          0|
+    +-----------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+-----------------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |     Source Object     |    C Type    |
++------------------------+-----+-----+------------+-----------------------+--------------+
+|ap_clk                  |  in |    1| ap_ctrl_hs | top_process_magnitude | return value |
+|ap_rst                  |  in |    1| ap_ctrl_hs | top_process_magnitude | return value |
+|ap_start                |  in |    1| ap_ctrl_hs | top_process_magnitude | return value |
+|ap_done                 | out |    1| ap_ctrl_hs | top_process_magnitude | return value |
+|ap_idle                 | out |    1| ap_ctrl_hs | top_process_magnitude | return value |
+|ap_ready                | out |    1| ap_ctrl_hs | top_process_magnitude | return value |
+|real_data_0_V           |  in |   18|   ap_none  |     real_data_0_V     |    pointer   |
+|real_data_1_V           |  in |   18|   ap_none  |     real_data_1_V     |    pointer   |
+|real_data_2_V           |  in |   18|   ap_none  |     real_data_2_V     |    pointer   |
+|real_data_3_V           |  in |   18|   ap_none  |     real_data_3_V     |    pointer   |
+|real_data_4_V           |  in |   18|   ap_none  |     real_data_4_V     |    pointer   |
+|real_data_5_V           |  in |   18|   ap_none  |     real_data_5_V     |    pointer   |
+|real_data_6_V           |  in |   18|   ap_none  |     real_data_6_V     |    pointer   |
+|real_data_7_V           |  in |   18|   ap_none  |     real_data_7_V     |    pointer   |
+|real_data_8_V           |  in |   18|   ap_none  |     real_data_8_V     |    pointer   |
+|real_data_9_V           |  in |   18|   ap_none  |     real_data_9_V     |    pointer   |
+|real_data_10_V          |  in |   18|   ap_none  |     real_data_10_V    |    pointer   |
+|real_data_11_V          |  in |   18|   ap_none  |     real_data_11_V    |    pointer   |
+|real_data_12_V          |  in |   18|   ap_none  |     real_data_12_V    |    pointer   |
+|real_data_13_V          |  in |   18|   ap_none  |     real_data_13_V    |    pointer   |
+|real_data_14_V          |  in |   18|   ap_none  |     real_data_14_V    |    pointer   |
+|real_data_15_V          |  in |   18|   ap_none  |     real_data_15_V    |    pointer   |
+|real_data_16_V          |  in |   18|   ap_none  |     real_data_16_V    |    pointer   |
+|real_data_17_V          |  in |   18|   ap_none  |     real_data_17_V    |    pointer   |
+|real_data_18_V          |  in |   18|   ap_none  |     real_data_18_V    |    pointer   |
+|real_data_19_V          |  in |   18|   ap_none  |     real_data_19_V    |    pointer   |
+|real_data_20_V          |  in |   18|   ap_none  |     real_data_20_V    |    pointer   |
+|real_data_21_V          |  in |   18|   ap_none  |     real_data_21_V    |    pointer   |
+|real_data_22_V          |  in |   18|   ap_none  |     real_data_22_V    |    pointer   |
+|real_data_23_V          |  in |   18|   ap_none  |     real_data_23_V    |    pointer   |
+|real_data_24_V          |  in |   18|   ap_none  |     real_data_24_V    |    pointer   |
+|real_data_25_V          |  in |   18|   ap_none  |     real_data_25_V    |    pointer   |
+|real_data_26_V          |  in |   18|   ap_none  |     real_data_26_V    |    pointer   |
+|real_data_27_V          |  in |   18|   ap_none  |     real_data_27_V    |    pointer   |
+|real_data_28_V          |  in |   18|   ap_none  |     real_data_28_V    |    pointer   |
+|real_data_29_V          |  in |   18|   ap_none  |     real_data_29_V    |    pointer   |
+|real_data_30_V          |  in |   18|   ap_none  |     real_data_30_V    |    pointer   |
+|real_data_31_V          |  in |   18|   ap_none  |     real_data_31_V    |    pointer   |
+|real_data_32_V          |  in |   18|   ap_none  |     real_data_32_V    |    pointer   |
+|real_data_33_V          |  in |   18|   ap_none  |     real_data_33_V    |    pointer   |
+|real_data_34_V          |  in |   18|   ap_none  |     real_data_34_V    |    pointer   |
+|real_data_35_V          |  in |   18|   ap_none  |     real_data_35_V    |    pointer   |
+|real_data_36_V          |  in |   18|   ap_none  |     real_data_36_V    |    pointer   |
+|real_data_37_V          |  in |   18|   ap_none  |     real_data_37_V    |    pointer   |
+|real_data_38_V          |  in |   18|   ap_none  |     real_data_38_V    |    pointer   |
+|real_data_39_V          |  in |   18|   ap_none  |     real_data_39_V    |    pointer   |
+|real_data_40_V          |  in |   18|   ap_none  |     real_data_40_V    |    pointer   |
+|real_data_41_V          |  in |   18|   ap_none  |     real_data_41_V    |    pointer   |
+|real_data_42_V          |  in |   18|   ap_none  |     real_data_42_V    |    pointer   |
+|real_data_43_V          |  in |   18|   ap_none  |     real_data_43_V    |    pointer   |
+|real_data_44_V          |  in |   18|   ap_none  |     real_data_44_V    |    pointer   |
+|real_data_45_V          |  in |   18|   ap_none  |     real_data_45_V    |    pointer   |
+|real_data_46_V          |  in |   18|   ap_none  |     real_data_46_V    |    pointer   |
+|real_data_47_V          |  in |   18|   ap_none  |     real_data_47_V    |    pointer   |
+|real_data_48_V          |  in |   18|   ap_none  |     real_data_48_V    |    pointer   |
+|real_data_49_V          |  in |   18|   ap_none  |     real_data_49_V    |    pointer   |
+|real_data_50_V          |  in |   18|   ap_none  |     real_data_50_V    |    pointer   |
+|real_data_51_V          |  in |   18|   ap_none  |     real_data_51_V    |    pointer   |
+|real_data_52_V          |  in |   18|   ap_none  |     real_data_52_V    |    pointer   |
+|real_data_53_V          |  in |   18|   ap_none  |     real_data_53_V    |    pointer   |
+|real_data_54_V          |  in |   18|   ap_none  |     real_data_54_V    |    pointer   |
+|real_data_55_V          |  in |   18|   ap_none  |     real_data_55_V    |    pointer   |
+|real_data_56_V          |  in |   18|   ap_none  |     real_data_56_V    |    pointer   |
+|real_data_57_V          |  in |   18|   ap_none  |     real_data_57_V    |    pointer   |
+|real_data_58_V          |  in |   18|   ap_none  |     real_data_58_V    |    pointer   |
+|real_data_59_V          |  in |   18|   ap_none  |     real_data_59_V    |    pointer   |
+|real_data_60_V          |  in |   18|   ap_none  |     real_data_60_V    |    pointer   |
+|real_data_61_V          |  in |   18|   ap_none  |     real_data_61_V    |    pointer   |
+|real_data_62_V          |  in |   18|   ap_none  |     real_data_62_V    |    pointer   |
+|real_data_63_V          |  in |   18|   ap_none  |     real_data_63_V    |    pointer   |
+|real_data_64_V          |  in |   18|   ap_none  |     real_data_64_V    |    pointer   |
+|real_data_65_V          |  in |   18|   ap_none  |     real_data_65_V    |    pointer   |
+|real_data_66_V          |  in |   18|   ap_none  |     real_data_66_V    |    pointer   |
+|real_data_67_V          |  in |   18|   ap_none  |     real_data_67_V    |    pointer   |
+|real_data_68_V          |  in |   18|   ap_none  |     real_data_68_V    |    pointer   |
+|real_data_69_V          |  in |   18|   ap_none  |     real_data_69_V    |    pointer   |
+|real_data_70_V          |  in |   18|   ap_none  |     real_data_70_V    |    pointer   |
+|real_data_71_V          |  in |   18|   ap_none  |     real_data_71_V    |    pointer   |
+|real_data_72_V          |  in |   18|   ap_none  |     real_data_72_V    |    pointer   |
+|real_data_73_V          |  in |   18|   ap_none  |     real_data_73_V    |    pointer   |
+|real_data_74_V          |  in |   18|   ap_none  |     real_data_74_V    |    pointer   |
+|real_data_75_V          |  in |   18|   ap_none  |     real_data_75_V    |    pointer   |
+|real_data_76_V          |  in |   18|   ap_none  |     real_data_76_V    |    pointer   |
+|real_data_77_V          |  in |   18|   ap_none  |     real_data_77_V    |    pointer   |
+|real_data_78_V          |  in |   18|   ap_none  |     real_data_78_V    |    pointer   |
+|real_data_79_V          |  in |   18|   ap_none  |     real_data_79_V    |    pointer   |
+|real_data_80_V          |  in |   18|   ap_none  |     real_data_80_V    |    pointer   |
+|real_data_81_V          |  in |   18|   ap_none  |     real_data_81_V    |    pointer   |
+|real_data_82_V          |  in |   18|   ap_none  |     real_data_82_V    |    pointer   |
+|real_data_83_V          |  in |   18|   ap_none  |     real_data_83_V    |    pointer   |
+|real_data_84_V          |  in |   18|   ap_none  |     real_data_84_V    |    pointer   |
+|real_data_85_V          |  in |   18|   ap_none  |     real_data_85_V    |    pointer   |
+|real_data_86_V          |  in |   18|   ap_none  |     real_data_86_V    |    pointer   |
+|real_data_87_V          |  in |   18|   ap_none  |     real_data_87_V    |    pointer   |
+|real_data_88_V          |  in |   18|   ap_none  |     real_data_88_V    |    pointer   |
+|real_data_89_V          |  in |   18|   ap_none  |     real_data_89_V    |    pointer   |
+|real_data_90_V          |  in |   18|   ap_none  |     real_data_90_V    |    pointer   |
+|real_data_91_V          |  in |   18|   ap_none  |     real_data_91_V    |    pointer   |
+|real_data_92_V          |  in |   18|   ap_none  |     real_data_92_V    |    pointer   |
+|real_data_93_V          |  in |   18|   ap_none  |     real_data_93_V    |    pointer   |
+|real_data_94_V          |  in |   18|   ap_none  |     real_data_94_V    |    pointer   |
+|real_data_95_V          |  in |   18|   ap_none  |     real_data_95_V    |    pointer   |
+|real_data_96_V          |  in |   18|   ap_none  |     real_data_96_V    |    pointer   |
+|real_data_97_V          |  in |   18|   ap_none  |     real_data_97_V    |    pointer   |
+|real_data_98_V          |  in |   18|   ap_none  |     real_data_98_V    |    pointer   |
+|real_data_99_V          |  in |   18|   ap_none  |     real_data_99_V    |    pointer   |
+|real_data_100_V         |  in |   18|   ap_none  |    real_data_100_V    |    pointer   |
+|real_data_101_V         |  in |   18|   ap_none  |    real_data_101_V    |    pointer   |
+|real_data_102_V         |  in |   18|   ap_none  |    real_data_102_V    |    pointer   |
+|real_data_103_V         |  in |   18|   ap_none  |    real_data_103_V    |    pointer   |
+|real_data_104_V         |  in |   18|   ap_none  |    real_data_104_V    |    pointer   |
+|real_data_105_V         |  in |   18|   ap_none  |    real_data_105_V    |    pointer   |
+|real_data_106_V         |  in |   18|   ap_none  |    real_data_106_V    |    pointer   |
+|real_data_107_V         |  in |   18|   ap_none  |    real_data_107_V    |    pointer   |
+|real_data_108_V         |  in |   18|   ap_none  |    real_data_108_V    |    pointer   |
+|real_data_109_V         |  in |   18|   ap_none  |    real_data_109_V    |    pointer   |
+|real_data_110_V         |  in |   18|   ap_none  |    real_data_110_V    |    pointer   |
+|real_data_111_V         |  in |   18|   ap_none  |    real_data_111_V    |    pointer   |
+|real_data_112_V         |  in |   18|   ap_none  |    real_data_112_V    |    pointer   |
+|real_data_113_V         |  in |   18|   ap_none  |    real_data_113_V    |    pointer   |
+|real_data_114_V         |  in |   18|   ap_none  |    real_data_114_V    |    pointer   |
+|real_data_115_V         |  in |   18|   ap_none  |    real_data_115_V    |    pointer   |
+|real_data_116_V         |  in |   18|   ap_none  |    real_data_116_V    |    pointer   |
+|real_data_117_V         |  in |   18|   ap_none  |    real_data_117_V    |    pointer   |
+|real_data_118_V         |  in |   18|   ap_none  |    real_data_118_V    |    pointer   |
+|real_data_119_V         |  in |   18|   ap_none  |    real_data_119_V    |    pointer   |
+|real_data_120_V         |  in |   18|   ap_none  |    real_data_120_V    |    pointer   |
+|real_data_121_V         |  in |   18|   ap_none  |    real_data_121_V    |    pointer   |
+|real_data_122_V         |  in |   18|   ap_none  |    real_data_122_V    |    pointer   |
+|real_data_123_V         |  in |   18|   ap_none  |    real_data_123_V    |    pointer   |
+|real_data_124_V         |  in |   18|   ap_none  |    real_data_124_V    |    pointer   |
+|real_data_125_V         |  in |   18|   ap_none  |    real_data_125_V    |    pointer   |
+|real_data_126_V         |  in |   18|   ap_none  |    real_data_126_V    |    pointer   |
+|real_data_127_V         |  in |   18|   ap_none  |    real_data_127_V    |    pointer   |
+|real_data_128_V         |  in |   18|   ap_none  |    real_data_128_V    |    pointer   |
+|real_data_129_V         |  in |   18|   ap_none  |    real_data_129_V    |    pointer   |
+|real_data_130_V         |  in |   18|   ap_none  |    real_data_130_V    |    pointer   |
+|real_data_131_V         |  in |   18|   ap_none  |    real_data_131_V    |    pointer   |
+|real_data_132_V         |  in |   18|   ap_none  |    real_data_132_V    |    pointer   |
+|real_data_133_V         |  in |   18|   ap_none  |    real_data_133_V    |    pointer   |
+|real_data_134_V         |  in |   18|   ap_none  |    real_data_134_V    |    pointer   |
+|real_data_135_V         |  in |   18|   ap_none  |    real_data_135_V    |    pointer   |
+|real_data_136_V         |  in |   18|   ap_none  |    real_data_136_V    |    pointer   |
+|real_data_137_V         |  in |   18|   ap_none  |    real_data_137_V    |    pointer   |
+|real_data_138_V         |  in |   18|   ap_none  |    real_data_138_V    |    pointer   |
+|real_data_139_V         |  in |   18|   ap_none  |    real_data_139_V    |    pointer   |
+|real_data_140_V         |  in |   18|   ap_none  |    real_data_140_V    |    pointer   |
+|real_data_141_V         |  in |   18|   ap_none  |    real_data_141_V    |    pointer   |
+|real_data_142_V         |  in |   18|   ap_none  |    real_data_142_V    |    pointer   |
+|real_data_143_V         |  in |   18|   ap_none  |    real_data_143_V    |    pointer   |
+|real_data_144_V         |  in |   18|   ap_none  |    real_data_144_V    |    pointer   |
+|real_data_145_V         |  in |   18|   ap_none  |    real_data_145_V    |    pointer   |
+|real_data_146_V         |  in |   18|   ap_none  |    real_data_146_V    |    pointer   |
+|real_data_147_V         |  in |   18|   ap_none  |    real_data_147_V    |    pointer   |
+|real_data_148_V         |  in |   18|   ap_none  |    real_data_148_V    |    pointer   |
+|real_data_149_V         |  in |   18|   ap_none  |    real_data_149_V    |    pointer   |
+|real_data_150_V         |  in |   18|   ap_none  |    real_data_150_V    |    pointer   |
+|real_data_151_V         |  in |   18|   ap_none  |    real_data_151_V    |    pointer   |
+|real_data_152_V         |  in |   18|   ap_none  |    real_data_152_V    |    pointer   |
+|real_data_153_V         |  in |   18|   ap_none  |    real_data_153_V    |    pointer   |
+|real_data_154_V         |  in |   18|   ap_none  |    real_data_154_V    |    pointer   |
+|real_data_155_V         |  in |   18|   ap_none  |    real_data_155_V    |    pointer   |
+|real_data_156_V         |  in |   18|   ap_none  |    real_data_156_V    |    pointer   |
+|real_data_157_V         |  in |   18|   ap_none  |    real_data_157_V    |    pointer   |
+|real_data_158_V         |  in |   18|   ap_none  |    real_data_158_V    |    pointer   |
+|real_data_159_V         |  in |   18|   ap_none  |    real_data_159_V    |    pointer   |
+|real_data_160_V         |  in |   18|   ap_none  |    real_data_160_V    |    pointer   |
+|real_data_161_V         |  in |   18|   ap_none  |    real_data_161_V    |    pointer   |
+|real_data_162_V         |  in |   18|   ap_none  |    real_data_162_V    |    pointer   |
+|real_data_163_V         |  in |   18|   ap_none  |    real_data_163_V    |    pointer   |
+|real_data_164_V         |  in |   18|   ap_none  |    real_data_164_V    |    pointer   |
+|real_data_165_V         |  in |   18|   ap_none  |    real_data_165_V    |    pointer   |
+|real_data_166_V         |  in |   18|   ap_none  |    real_data_166_V    |    pointer   |
+|real_data_167_V         |  in |   18|   ap_none  |    real_data_167_V    |    pointer   |
+|real_data_168_V         |  in |   18|   ap_none  |    real_data_168_V    |    pointer   |
+|real_data_169_V         |  in |   18|   ap_none  |    real_data_169_V    |    pointer   |
+|real_data_170_V         |  in |   18|   ap_none  |    real_data_170_V    |    pointer   |
+|real_data_171_V         |  in |   18|   ap_none  |    real_data_171_V    |    pointer   |
+|real_data_172_V         |  in |   18|   ap_none  |    real_data_172_V    |    pointer   |
+|real_data_173_V         |  in |   18|   ap_none  |    real_data_173_V    |    pointer   |
+|real_data_174_V         |  in |   18|   ap_none  |    real_data_174_V    |    pointer   |
+|real_data_175_V         |  in |   18|   ap_none  |    real_data_175_V    |    pointer   |
+|real_data_176_V         |  in |   18|   ap_none  |    real_data_176_V    |    pointer   |
+|real_data_177_V         |  in |   18|   ap_none  |    real_data_177_V    |    pointer   |
+|real_data_178_V         |  in |   18|   ap_none  |    real_data_178_V    |    pointer   |
+|real_data_179_V         |  in |   18|   ap_none  |    real_data_179_V    |    pointer   |
+|real_data_180_V         |  in |   18|   ap_none  |    real_data_180_V    |    pointer   |
+|real_data_181_V         |  in |   18|   ap_none  |    real_data_181_V    |    pointer   |
+|real_data_182_V         |  in |   18|   ap_none  |    real_data_182_V    |    pointer   |
+|real_data_183_V         |  in |   18|   ap_none  |    real_data_183_V    |    pointer   |
+|real_data_184_V         |  in |   18|   ap_none  |    real_data_184_V    |    pointer   |
+|real_data_185_V         |  in |   18|   ap_none  |    real_data_185_V    |    pointer   |
+|real_data_186_V         |  in |   18|   ap_none  |    real_data_186_V    |    pointer   |
+|real_data_187_V         |  in |   18|   ap_none  |    real_data_187_V    |    pointer   |
+|real_data_188_V         |  in |   18|   ap_none  |    real_data_188_V    |    pointer   |
+|real_data_189_V         |  in |   18|   ap_none  |    real_data_189_V    |    pointer   |
+|real_data_190_V         |  in |   18|   ap_none  |    real_data_190_V    |    pointer   |
+|real_data_191_V         |  in |   18|   ap_none  |    real_data_191_V    |    pointer   |
+|real_data_192_V         |  in |   18|   ap_none  |    real_data_192_V    |    pointer   |
+|real_data_193_V         |  in |   18|   ap_none  |    real_data_193_V    |    pointer   |
+|real_data_194_V         |  in |   18|   ap_none  |    real_data_194_V    |    pointer   |
+|real_data_195_V         |  in |   18|   ap_none  |    real_data_195_V    |    pointer   |
+|real_data_196_V         |  in |   18|   ap_none  |    real_data_196_V    |    pointer   |
+|real_data_197_V         |  in |   18|   ap_none  |    real_data_197_V    |    pointer   |
+|real_data_198_V         |  in |   18|   ap_none  |    real_data_198_V    |    pointer   |
+|real_data_199_V         |  in |   18|   ap_none  |    real_data_199_V    |    pointer   |
+|real_data_200_V         |  in |   18|   ap_none  |    real_data_200_V    |    pointer   |
+|real_data_201_V         |  in |   18|   ap_none  |    real_data_201_V    |    pointer   |
+|real_data_202_V         |  in |   18|   ap_none  |    real_data_202_V    |    pointer   |
+|real_data_203_V         |  in |   18|   ap_none  |    real_data_203_V    |    pointer   |
+|real_data_204_V         |  in |   18|   ap_none  |    real_data_204_V    |    pointer   |
+|real_data_205_V         |  in |   18|   ap_none  |    real_data_205_V    |    pointer   |
+|real_data_206_V         |  in |   18|   ap_none  |    real_data_206_V    |    pointer   |
+|real_data_207_V         |  in |   18|   ap_none  |    real_data_207_V    |    pointer   |
+|real_data_208_V         |  in |   18|   ap_none  |    real_data_208_V    |    pointer   |
+|real_data_209_V         |  in |   18|   ap_none  |    real_data_209_V    |    pointer   |
+|real_data_210_V         |  in |   18|   ap_none  |    real_data_210_V    |    pointer   |
+|real_data_211_V         |  in |   18|   ap_none  |    real_data_211_V    |    pointer   |
+|real_data_212_V         |  in |   18|   ap_none  |    real_data_212_V    |    pointer   |
+|real_data_213_V         |  in |   18|   ap_none  |    real_data_213_V    |    pointer   |
+|real_data_214_V         |  in |   18|   ap_none  |    real_data_214_V    |    pointer   |
+|real_data_215_V         |  in |   18|   ap_none  |    real_data_215_V    |    pointer   |
+|real_data_216_V         |  in |   18|   ap_none  |    real_data_216_V    |    pointer   |
+|real_data_217_V         |  in |   18|   ap_none  |    real_data_217_V    |    pointer   |
+|real_data_218_V         |  in |   18|   ap_none  |    real_data_218_V    |    pointer   |
+|real_data_219_V         |  in |   18|   ap_none  |    real_data_219_V    |    pointer   |
+|real_data_220_V         |  in |   18|   ap_none  |    real_data_220_V    |    pointer   |
+|real_data_221_V         |  in |   18|   ap_none  |    real_data_221_V    |    pointer   |
+|real_data_222_V         |  in |   18|   ap_none  |    real_data_222_V    |    pointer   |
+|real_data_223_V         |  in |   18|   ap_none  |    real_data_223_V    |    pointer   |
+|real_data_224_V         |  in |   18|   ap_none  |    real_data_224_V    |    pointer   |
+|real_data_225_V         |  in |   18|   ap_none  |    real_data_225_V    |    pointer   |
+|real_data_226_V         |  in |   18|   ap_none  |    real_data_226_V    |    pointer   |
+|real_data_227_V         |  in |   18|   ap_none  |    real_data_227_V    |    pointer   |
+|real_data_228_V         |  in |   18|   ap_none  |    real_data_228_V    |    pointer   |
+|real_data_229_V         |  in |   18|   ap_none  |    real_data_229_V    |    pointer   |
+|real_data_230_V         |  in |   18|   ap_none  |    real_data_230_V    |    pointer   |
+|real_data_231_V         |  in |   18|   ap_none  |    real_data_231_V    |    pointer   |
+|real_data_232_V         |  in |   18|   ap_none  |    real_data_232_V    |    pointer   |
+|real_data_233_V         |  in |   18|   ap_none  |    real_data_233_V    |    pointer   |
+|real_data_234_V         |  in |   18|   ap_none  |    real_data_234_V    |    pointer   |
+|real_data_235_V         |  in |   18|   ap_none  |    real_data_235_V    |    pointer   |
+|real_data_236_V         |  in |   18|   ap_none  |    real_data_236_V    |    pointer   |
+|real_data_237_V         |  in |   18|   ap_none  |    real_data_237_V    |    pointer   |
+|real_data_238_V         |  in |   18|   ap_none  |    real_data_238_V    |    pointer   |
+|real_data_239_V         |  in |   18|   ap_none  |    real_data_239_V    |    pointer   |
+|real_data_240_V         |  in |   18|   ap_none  |    real_data_240_V    |    pointer   |
+|real_data_241_V         |  in |   18|   ap_none  |    real_data_241_V    |    pointer   |
+|real_data_242_V         |  in |   18|   ap_none  |    real_data_242_V    |    pointer   |
+|real_data_243_V         |  in |   18|   ap_none  |    real_data_243_V    |    pointer   |
+|real_data_244_V         |  in |   18|   ap_none  |    real_data_244_V    |    pointer   |
+|real_data_245_V         |  in |   18|   ap_none  |    real_data_245_V    |    pointer   |
+|real_data_246_V         |  in |   18|   ap_none  |    real_data_246_V    |    pointer   |
+|real_data_247_V         |  in |   18|   ap_none  |    real_data_247_V    |    pointer   |
+|real_data_248_V         |  in |   18|   ap_none  |    real_data_248_V    |    pointer   |
+|real_data_249_V         |  in |   18|   ap_none  |    real_data_249_V    |    pointer   |
+|real_data_250_V         |  in |   18|   ap_none  |    real_data_250_V    |    pointer   |
+|real_data_251_V         |  in |   18|   ap_none  |    real_data_251_V    |    pointer   |
+|real_data_252_V         |  in |   18|   ap_none  |    real_data_252_V    |    pointer   |
+|real_data_253_V         |  in |   18|   ap_none  |    real_data_253_V    |    pointer   |
+|real_data_254_V         |  in |   18|   ap_none  |    real_data_254_V    |    pointer   |
+|real_data_255_V         |  in |   18|   ap_none  |    real_data_255_V    |    pointer   |
+|imag_data_0_V           |  in |   18|   ap_none  |     imag_data_0_V     |    pointer   |
+|imag_data_1_V           |  in |   18|   ap_none  |     imag_data_1_V     |    pointer   |
+|imag_data_2_V           |  in |   18|   ap_none  |     imag_data_2_V     |    pointer   |
+|imag_data_3_V           |  in |   18|   ap_none  |     imag_data_3_V     |    pointer   |
+|imag_data_4_V           |  in |   18|   ap_none  |     imag_data_4_V     |    pointer   |
+|imag_data_5_V           |  in |   18|   ap_none  |     imag_data_5_V     |    pointer   |
+|imag_data_6_V           |  in |   18|   ap_none  |     imag_data_6_V     |    pointer   |
+|imag_data_7_V           |  in |   18|   ap_none  |     imag_data_7_V     |    pointer   |
+|imag_data_8_V           |  in |   18|   ap_none  |     imag_data_8_V     |    pointer   |
+|imag_data_9_V           |  in |   18|   ap_none  |     imag_data_9_V     |    pointer   |
+|imag_data_10_V          |  in |   18|   ap_none  |     imag_data_10_V    |    pointer   |
+|imag_data_11_V          |  in |   18|   ap_none  |     imag_data_11_V    |    pointer   |
+|imag_data_12_V          |  in |   18|   ap_none  |     imag_data_12_V    |    pointer   |
+|imag_data_13_V          |  in |   18|   ap_none  |     imag_data_13_V    |    pointer   |
+|imag_data_14_V          |  in |   18|   ap_none  |     imag_data_14_V    |    pointer   |
+|imag_data_15_V          |  in |   18|   ap_none  |     imag_data_15_V    |    pointer   |
+|imag_data_16_V          |  in |   18|   ap_none  |     imag_data_16_V    |    pointer   |
+|imag_data_17_V          |  in |   18|   ap_none  |     imag_data_17_V    |    pointer   |
+|imag_data_18_V          |  in |   18|   ap_none  |     imag_data_18_V    |    pointer   |
+|imag_data_19_V          |  in |   18|   ap_none  |     imag_data_19_V    |    pointer   |
+|imag_data_20_V          |  in |   18|   ap_none  |     imag_data_20_V    |    pointer   |
+|imag_data_21_V          |  in |   18|   ap_none  |     imag_data_21_V    |    pointer   |
+|imag_data_22_V          |  in |   18|   ap_none  |     imag_data_22_V    |    pointer   |
+|imag_data_23_V          |  in |   18|   ap_none  |     imag_data_23_V    |    pointer   |
+|imag_data_24_V          |  in |   18|   ap_none  |     imag_data_24_V    |    pointer   |
+|imag_data_25_V          |  in |   18|   ap_none  |     imag_data_25_V    |    pointer   |
+|imag_data_26_V          |  in |   18|   ap_none  |     imag_data_26_V    |    pointer   |
+|imag_data_27_V          |  in |   18|   ap_none  |     imag_data_27_V    |    pointer   |
+|imag_data_28_V          |  in |   18|   ap_none  |     imag_data_28_V    |    pointer   |
+|imag_data_29_V          |  in |   18|   ap_none  |     imag_data_29_V    |    pointer   |
+|imag_data_30_V          |  in |   18|   ap_none  |     imag_data_30_V    |    pointer   |
+|imag_data_31_V          |  in |   18|   ap_none  |     imag_data_31_V    |    pointer   |
+|imag_data_32_V          |  in |   18|   ap_none  |     imag_data_32_V    |    pointer   |
+|imag_data_33_V          |  in |   18|   ap_none  |     imag_data_33_V    |    pointer   |
+|imag_data_34_V          |  in |   18|   ap_none  |     imag_data_34_V    |    pointer   |
+|imag_data_35_V          |  in |   18|   ap_none  |     imag_data_35_V    |    pointer   |
+|imag_data_36_V          |  in |   18|   ap_none  |     imag_data_36_V    |    pointer   |
+|imag_data_37_V          |  in |   18|   ap_none  |     imag_data_37_V    |    pointer   |
+|imag_data_38_V          |  in |   18|   ap_none  |     imag_data_38_V    |    pointer   |
+|imag_data_39_V          |  in |   18|   ap_none  |     imag_data_39_V    |    pointer   |
+|imag_data_40_V          |  in |   18|   ap_none  |     imag_data_40_V    |    pointer   |
+|imag_data_41_V          |  in |   18|   ap_none  |     imag_data_41_V    |    pointer   |
+|imag_data_42_V          |  in |   18|   ap_none  |     imag_data_42_V    |    pointer   |
+|imag_data_43_V          |  in |   18|   ap_none  |     imag_data_43_V    |    pointer   |
+|imag_data_44_V          |  in |   18|   ap_none  |     imag_data_44_V    |    pointer   |
+|imag_data_45_V          |  in |   18|   ap_none  |     imag_data_45_V    |    pointer   |
+|imag_data_46_V          |  in |   18|   ap_none  |     imag_data_46_V    |    pointer   |
+|imag_data_47_V          |  in |   18|   ap_none  |     imag_data_47_V    |    pointer   |
+|imag_data_48_V          |  in |   18|   ap_none  |     imag_data_48_V    |    pointer   |
+|imag_data_49_V          |  in |   18|   ap_none  |     imag_data_49_V    |    pointer   |
+|imag_data_50_V          |  in |   18|   ap_none  |     imag_data_50_V    |    pointer   |
+|imag_data_51_V          |  in |   18|   ap_none  |     imag_data_51_V    |    pointer   |
+|imag_data_52_V          |  in |   18|   ap_none  |     imag_data_52_V    |    pointer   |
+|imag_data_53_V          |  in |   18|   ap_none  |     imag_data_53_V    |    pointer   |
+|imag_data_54_V          |  in |   18|   ap_none  |     imag_data_54_V    |    pointer   |
+|imag_data_55_V          |  in |   18|   ap_none  |     imag_data_55_V    |    pointer   |
+|imag_data_56_V          |  in |   18|   ap_none  |     imag_data_56_V    |    pointer   |
+|imag_data_57_V          |  in |   18|   ap_none  |     imag_data_57_V    |    pointer   |
+|imag_data_58_V          |  in |   18|   ap_none  |     imag_data_58_V    |    pointer   |
+|imag_data_59_V          |  in |   18|   ap_none  |     imag_data_59_V    |    pointer   |
+|imag_data_60_V          |  in |   18|   ap_none  |     imag_data_60_V    |    pointer   |
+|imag_data_61_V          |  in |   18|   ap_none  |     imag_data_61_V    |    pointer   |
+|imag_data_62_V          |  in |   18|   ap_none  |     imag_data_62_V    |    pointer   |
+|imag_data_63_V          |  in |   18|   ap_none  |     imag_data_63_V    |    pointer   |
+|imag_data_64_V          |  in |   18|   ap_none  |     imag_data_64_V    |    pointer   |
+|imag_data_65_V          |  in |   18|   ap_none  |     imag_data_65_V    |    pointer   |
+|imag_data_66_V          |  in |   18|   ap_none  |     imag_data_66_V    |    pointer   |
+|imag_data_67_V          |  in |   18|   ap_none  |     imag_data_67_V    |    pointer   |
+|imag_data_68_V          |  in |   18|   ap_none  |     imag_data_68_V    |    pointer   |
+|imag_data_69_V          |  in |   18|   ap_none  |     imag_data_69_V    |    pointer   |
+|imag_data_70_V          |  in |   18|   ap_none  |     imag_data_70_V    |    pointer   |
+|imag_data_71_V          |  in |   18|   ap_none  |     imag_data_71_V    |    pointer   |
+|imag_data_72_V          |  in |   18|   ap_none  |     imag_data_72_V    |    pointer   |
+|imag_data_73_V          |  in |   18|   ap_none  |     imag_data_73_V    |    pointer   |
+|imag_data_74_V          |  in |   18|   ap_none  |     imag_data_74_V    |    pointer   |
+|imag_data_75_V          |  in |   18|   ap_none  |     imag_data_75_V    |    pointer   |
+|imag_data_76_V          |  in |   18|   ap_none  |     imag_data_76_V    |    pointer   |
+|imag_data_77_V          |  in |   18|   ap_none  |     imag_data_77_V    |    pointer   |
+|imag_data_78_V          |  in |   18|   ap_none  |     imag_data_78_V    |    pointer   |
+|imag_data_79_V          |  in |   18|   ap_none  |     imag_data_79_V    |    pointer   |
+|imag_data_80_V          |  in |   18|   ap_none  |     imag_data_80_V    |    pointer   |
+|imag_data_81_V          |  in |   18|   ap_none  |     imag_data_81_V    |    pointer   |
+|imag_data_82_V          |  in |   18|   ap_none  |     imag_data_82_V    |    pointer   |
+|imag_data_83_V          |  in |   18|   ap_none  |     imag_data_83_V    |    pointer   |
+|imag_data_84_V          |  in |   18|   ap_none  |     imag_data_84_V    |    pointer   |
+|imag_data_85_V          |  in |   18|   ap_none  |     imag_data_85_V    |    pointer   |
+|imag_data_86_V          |  in |   18|   ap_none  |     imag_data_86_V    |    pointer   |
+|imag_data_87_V          |  in |   18|   ap_none  |     imag_data_87_V    |    pointer   |
+|imag_data_88_V          |  in |   18|   ap_none  |     imag_data_88_V    |    pointer   |
+|imag_data_89_V          |  in |   18|   ap_none  |     imag_data_89_V    |    pointer   |
+|imag_data_90_V          |  in |   18|   ap_none  |     imag_data_90_V    |    pointer   |
+|imag_data_91_V          |  in |   18|   ap_none  |     imag_data_91_V    |    pointer   |
+|imag_data_92_V          |  in |   18|   ap_none  |     imag_data_92_V    |    pointer   |
+|imag_data_93_V          |  in |   18|   ap_none  |     imag_data_93_V    |    pointer   |
+|imag_data_94_V          |  in |   18|   ap_none  |     imag_data_94_V    |    pointer   |
+|imag_data_95_V          |  in |   18|   ap_none  |     imag_data_95_V    |    pointer   |
+|imag_data_96_V          |  in |   18|   ap_none  |     imag_data_96_V    |    pointer   |
+|imag_data_97_V          |  in |   18|   ap_none  |     imag_data_97_V    |    pointer   |
+|imag_data_98_V          |  in |   18|   ap_none  |     imag_data_98_V    |    pointer   |
+|imag_data_99_V          |  in |   18|   ap_none  |     imag_data_99_V    |    pointer   |
+|imag_data_100_V         |  in |   18|   ap_none  |    imag_data_100_V    |    pointer   |
+|imag_data_101_V         |  in |   18|   ap_none  |    imag_data_101_V    |    pointer   |
+|imag_data_102_V         |  in |   18|   ap_none  |    imag_data_102_V    |    pointer   |
+|imag_data_103_V         |  in |   18|   ap_none  |    imag_data_103_V    |    pointer   |
+|imag_data_104_V         |  in |   18|   ap_none  |    imag_data_104_V    |    pointer   |
+|imag_data_105_V         |  in |   18|   ap_none  |    imag_data_105_V    |    pointer   |
+|imag_data_106_V         |  in |   18|   ap_none  |    imag_data_106_V    |    pointer   |
+|imag_data_107_V         |  in |   18|   ap_none  |    imag_data_107_V    |    pointer   |
+|imag_data_108_V         |  in |   18|   ap_none  |    imag_data_108_V    |    pointer   |
+|imag_data_109_V         |  in |   18|   ap_none  |    imag_data_109_V    |    pointer   |
+|imag_data_110_V         |  in |   18|   ap_none  |    imag_data_110_V    |    pointer   |
+|imag_data_111_V         |  in |   18|   ap_none  |    imag_data_111_V    |    pointer   |
+|imag_data_112_V         |  in |   18|   ap_none  |    imag_data_112_V    |    pointer   |
+|imag_data_113_V         |  in |   18|   ap_none  |    imag_data_113_V    |    pointer   |
+|imag_data_114_V         |  in |   18|   ap_none  |    imag_data_114_V    |    pointer   |
+|imag_data_115_V         |  in |   18|   ap_none  |    imag_data_115_V    |    pointer   |
+|imag_data_116_V         |  in |   18|   ap_none  |    imag_data_116_V    |    pointer   |
+|imag_data_117_V         |  in |   18|   ap_none  |    imag_data_117_V    |    pointer   |
+|imag_data_118_V         |  in |   18|   ap_none  |    imag_data_118_V    |    pointer   |
+|imag_data_119_V         |  in |   18|   ap_none  |    imag_data_119_V    |    pointer   |
+|imag_data_120_V         |  in |   18|   ap_none  |    imag_data_120_V    |    pointer   |
+|imag_data_121_V         |  in |   18|   ap_none  |    imag_data_121_V    |    pointer   |
+|imag_data_122_V         |  in |   18|   ap_none  |    imag_data_122_V    |    pointer   |
+|imag_data_123_V         |  in |   18|   ap_none  |    imag_data_123_V    |    pointer   |
+|imag_data_124_V         |  in |   18|   ap_none  |    imag_data_124_V    |    pointer   |
+|imag_data_125_V         |  in |   18|   ap_none  |    imag_data_125_V    |    pointer   |
+|imag_data_126_V         |  in |   18|   ap_none  |    imag_data_126_V    |    pointer   |
+|imag_data_127_V         |  in |   18|   ap_none  |    imag_data_127_V    |    pointer   |
+|imag_data_128_V         |  in |   18|   ap_none  |    imag_data_128_V    |    pointer   |
+|imag_data_129_V         |  in |   18|   ap_none  |    imag_data_129_V    |    pointer   |
+|imag_data_130_V         |  in |   18|   ap_none  |    imag_data_130_V    |    pointer   |
+|imag_data_131_V         |  in |   18|   ap_none  |    imag_data_131_V    |    pointer   |
+|imag_data_132_V         |  in |   18|   ap_none  |    imag_data_132_V    |    pointer   |
+|imag_data_133_V         |  in |   18|   ap_none  |    imag_data_133_V    |    pointer   |
+|imag_data_134_V         |  in |   18|   ap_none  |    imag_data_134_V    |    pointer   |
+|imag_data_135_V         |  in |   18|   ap_none  |    imag_data_135_V    |    pointer   |
+|imag_data_136_V         |  in |   18|   ap_none  |    imag_data_136_V    |    pointer   |
+|imag_data_137_V         |  in |   18|   ap_none  |    imag_data_137_V    |    pointer   |
+|imag_data_138_V         |  in |   18|   ap_none  |    imag_data_138_V    |    pointer   |
+|imag_data_139_V         |  in |   18|   ap_none  |    imag_data_139_V    |    pointer   |
+|imag_data_140_V         |  in |   18|   ap_none  |    imag_data_140_V    |    pointer   |
+|imag_data_141_V         |  in |   18|   ap_none  |    imag_data_141_V    |    pointer   |
+|imag_data_142_V         |  in |   18|   ap_none  |    imag_data_142_V    |    pointer   |
+|imag_data_143_V         |  in |   18|   ap_none  |    imag_data_143_V    |    pointer   |
+|imag_data_144_V         |  in |   18|   ap_none  |    imag_data_144_V    |    pointer   |
+|imag_data_145_V         |  in |   18|   ap_none  |    imag_data_145_V    |    pointer   |
+|imag_data_146_V         |  in |   18|   ap_none  |    imag_data_146_V    |    pointer   |
+|imag_data_147_V         |  in |   18|   ap_none  |    imag_data_147_V    |    pointer   |
+|imag_data_148_V         |  in |   18|   ap_none  |    imag_data_148_V    |    pointer   |
+|imag_data_149_V         |  in |   18|   ap_none  |    imag_data_149_V    |    pointer   |
+|imag_data_150_V         |  in |   18|   ap_none  |    imag_data_150_V    |    pointer   |
+|imag_data_151_V         |  in |   18|   ap_none  |    imag_data_151_V    |    pointer   |
+|imag_data_152_V         |  in |   18|   ap_none  |    imag_data_152_V    |    pointer   |
+|imag_data_153_V         |  in |   18|   ap_none  |    imag_data_153_V    |    pointer   |
+|imag_data_154_V         |  in |   18|   ap_none  |    imag_data_154_V    |    pointer   |
+|imag_data_155_V         |  in |   18|   ap_none  |    imag_data_155_V    |    pointer   |
+|imag_data_156_V         |  in |   18|   ap_none  |    imag_data_156_V    |    pointer   |
+|imag_data_157_V         |  in |   18|   ap_none  |    imag_data_157_V    |    pointer   |
+|imag_data_158_V         |  in |   18|   ap_none  |    imag_data_158_V    |    pointer   |
+|imag_data_159_V         |  in |   18|   ap_none  |    imag_data_159_V    |    pointer   |
+|imag_data_160_V         |  in |   18|   ap_none  |    imag_data_160_V    |    pointer   |
+|imag_data_161_V         |  in |   18|   ap_none  |    imag_data_161_V    |    pointer   |
+|imag_data_162_V         |  in |   18|   ap_none  |    imag_data_162_V    |    pointer   |
+|imag_data_163_V         |  in |   18|   ap_none  |    imag_data_163_V    |    pointer   |
+|imag_data_164_V         |  in |   18|   ap_none  |    imag_data_164_V    |    pointer   |
+|imag_data_165_V         |  in |   18|   ap_none  |    imag_data_165_V    |    pointer   |
+|imag_data_166_V         |  in |   18|   ap_none  |    imag_data_166_V    |    pointer   |
+|imag_data_167_V         |  in |   18|   ap_none  |    imag_data_167_V    |    pointer   |
+|imag_data_168_V         |  in |   18|   ap_none  |    imag_data_168_V    |    pointer   |
+|imag_data_169_V         |  in |   18|   ap_none  |    imag_data_169_V    |    pointer   |
+|imag_data_170_V         |  in |   18|   ap_none  |    imag_data_170_V    |    pointer   |
+|imag_data_171_V         |  in |   18|   ap_none  |    imag_data_171_V    |    pointer   |
+|imag_data_172_V         |  in |   18|   ap_none  |    imag_data_172_V    |    pointer   |
+|imag_data_173_V         |  in |   18|   ap_none  |    imag_data_173_V    |    pointer   |
+|imag_data_174_V         |  in |   18|   ap_none  |    imag_data_174_V    |    pointer   |
+|imag_data_175_V         |  in |   18|   ap_none  |    imag_data_175_V    |    pointer   |
+|imag_data_176_V         |  in |   18|   ap_none  |    imag_data_176_V    |    pointer   |
+|imag_data_177_V         |  in |   18|   ap_none  |    imag_data_177_V    |    pointer   |
+|imag_data_178_V         |  in |   18|   ap_none  |    imag_data_178_V    |    pointer   |
+|imag_data_179_V         |  in |   18|   ap_none  |    imag_data_179_V    |    pointer   |
+|imag_data_180_V         |  in |   18|   ap_none  |    imag_data_180_V    |    pointer   |
+|imag_data_181_V         |  in |   18|   ap_none  |    imag_data_181_V    |    pointer   |
+|imag_data_182_V         |  in |   18|   ap_none  |    imag_data_182_V    |    pointer   |
+|imag_data_183_V         |  in |   18|   ap_none  |    imag_data_183_V    |    pointer   |
+|imag_data_184_V         |  in |   18|   ap_none  |    imag_data_184_V    |    pointer   |
+|imag_data_185_V         |  in |   18|   ap_none  |    imag_data_185_V    |    pointer   |
+|imag_data_186_V         |  in |   18|   ap_none  |    imag_data_186_V    |    pointer   |
+|imag_data_187_V         |  in |   18|   ap_none  |    imag_data_187_V    |    pointer   |
+|imag_data_188_V         |  in |   18|   ap_none  |    imag_data_188_V    |    pointer   |
+|imag_data_189_V         |  in |   18|   ap_none  |    imag_data_189_V    |    pointer   |
+|imag_data_190_V         |  in |   18|   ap_none  |    imag_data_190_V    |    pointer   |
+|imag_data_191_V         |  in |   18|   ap_none  |    imag_data_191_V    |    pointer   |
+|imag_data_192_V         |  in |   18|   ap_none  |    imag_data_192_V    |    pointer   |
+|imag_data_193_V         |  in |   18|   ap_none  |    imag_data_193_V    |    pointer   |
+|imag_data_194_V         |  in |   18|   ap_none  |    imag_data_194_V    |    pointer   |
+|imag_data_195_V         |  in |   18|   ap_none  |    imag_data_195_V    |    pointer   |
+|imag_data_196_V         |  in |   18|   ap_none  |    imag_data_196_V    |    pointer   |
+|imag_data_197_V         |  in |   18|   ap_none  |    imag_data_197_V    |    pointer   |
+|imag_data_198_V         |  in |   18|   ap_none  |    imag_data_198_V    |    pointer   |
+|imag_data_199_V         |  in |   18|   ap_none  |    imag_data_199_V    |    pointer   |
+|imag_data_200_V         |  in |   18|   ap_none  |    imag_data_200_V    |    pointer   |
+|imag_data_201_V         |  in |   18|   ap_none  |    imag_data_201_V    |    pointer   |
+|imag_data_202_V         |  in |   18|   ap_none  |    imag_data_202_V    |    pointer   |
+|imag_data_203_V         |  in |   18|   ap_none  |    imag_data_203_V    |    pointer   |
+|imag_data_204_V         |  in |   18|   ap_none  |    imag_data_204_V    |    pointer   |
+|imag_data_205_V         |  in |   18|   ap_none  |    imag_data_205_V    |    pointer   |
+|imag_data_206_V         |  in |   18|   ap_none  |    imag_data_206_V    |    pointer   |
+|imag_data_207_V         |  in |   18|   ap_none  |    imag_data_207_V    |    pointer   |
+|imag_data_208_V         |  in |   18|   ap_none  |    imag_data_208_V    |    pointer   |
+|imag_data_209_V         |  in |   18|   ap_none  |    imag_data_209_V    |    pointer   |
+|imag_data_210_V         |  in |   18|   ap_none  |    imag_data_210_V    |    pointer   |
+|imag_data_211_V         |  in |   18|   ap_none  |    imag_data_211_V    |    pointer   |
+|imag_data_212_V         |  in |   18|   ap_none  |    imag_data_212_V    |    pointer   |
+|imag_data_213_V         |  in |   18|   ap_none  |    imag_data_213_V    |    pointer   |
+|imag_data_214_V         |  in |   18|   ap_none  |    imag_data_214_V    |    pointer   |
+|imag_data_215_V         |  in |   18|   ap_none  |    imag_data_215_V    |    pointer   |
+|imag_data_216_V         |  in |   18|   ap_none  |    imag_data_216_V    |    pointer   |
+|imag_data_217_V         |  in |   18|   ap_none  |    imag_data_217_V    |    pointer   |
+|imag_data_218_V         |  in |   18|   ap_none  |    imag_data_218_V    |    pointer   |
+|imag_data_219_V         |  in |   18|   ap_none  |    imag_data_219_V    |    pointer   |
+|imag_data_220_V         |  in |   18|   ap_none  |    imag_data_220_V    |    pointer   |
+|imag_data_221_V         |  in |   18|   ap_none  |    imag_data_221_V    |    pointer   |
+|imag_data_222_V         |  in |   18|   ap_none  |    imag_data_222_V    |    pointer   |
+|imag_data_223_V         |  in |   18|   ap_none  |    imag_data_223_V    |    pointer   |
+|imag_data_224_V         |  in |   18|   ap_none  |    imag_data_224_V    |    pointer   |
+|imag_data_225_V         |  in |   18|   ap_none  |    imag_data_225_V    |    pointer   |
+|imag_data_226_V         |  in |   18|   ap_none  |    imag_data_226_V    |    pointer   |
+|imag_data_227_V         |  in |   18|   ap_none  |    imag_data_227_V    |    pointer   |
+|imag_data_228_V         |  in |   18|   ap_none  |    imag_data_228_V    |    pointer   |
+|imag_data_229_V         |  in |   18|   ap_none  |    imag_data_229_V    |    pointer   |
+|imag_data_230_V         |  in |   18|   ap_none  |    imag_data_230_V    |    pointer   |
+|imag_data_231_V         |  in |   18|   ap_none  |    imag_data_231_V    |    pointer   |
+|imag_data_232_V         |  in |   18|   ap_none  |    imag_data_232_V    |    pointer   |
+|imag_data_233_V         |  in |   18|   ap_none  |    imag_data_233_V    |    pointer   |
+|imag_data_234_V         |  in |   18|   ap_none  |    imag_data_234_V    |    pointer   |
+|imag_data_235_V         |  in |   18|   ap_none  |    imag_data_235_V    |    pointer   |
+|imag_data_236_V         |  in |   18|   ap_none  |    imag_data_236_V    |    pointer   |
+|imag_data_237_V         |  in |   18|   ap_none  |    imag_data_237_V    |    pointer   |
+|imag_data_238_V         |  in |   18|   ap_none  |    imag_data_238_V    |    pointer   |
+|imag_data_239_V         |  in |   18|   ap_none  |    imag_data_239_V    |    pointer   |
+|imag_data_240_V         |  in |   18|   ap_none  |    imag_data_240_V    |    pointer   |
+|imag_data_241_V         |  in |   18|   ap_none  |    imag_data_241_V    |    pointer   |
+|imag_data_242_V         |  in |   18|   ap_none  |    imag_data_242_V    |    pointer   |
+|imag_data_243_V         |  in |   18|   ap_none  |    imag_data_243_V    |    pointer   |
+|imag_data_244_V         |  in |   18|   ap_none  |    imag_data_244_V    |    pointer   |
+|imag_data_245_V         |  in |   18|   ap_none  |    imag_data_245_V    |    pointer   |
+|imag_data_246_V         |  in |   18|   ap_none  |    imag_data_246_V    |    pointer   |
+|imag_data_247_V         |  in |   18|   ap_none  |    imag_data_247_V    |    pointer   |
+|imag_data_248_V         |  in |   18|   ap_none  |    imag_data_248_V    |    pointer   |
+|imag_data_249_V         |  in |   18|   ap_none  |    imag_data_249_V    |    pointer   |
+|imag_data_250_V         |  in |   18|   ap_none  |    imag_data_250_V    |    pointer   |
+|imag_data_251_V         |  in |   18|   ap_none  |    imag_data_251_V    |    pointer   |
+|imag_data_252_V         |  in |   18|   ap_none  |    imag_data_252_V    |    pointer   |
+|imag_data_253_V         |  in |   18|   ap_none  |    imag_data_253_V    |    pointer   |
+|imag_data_254_V         |  in |   18|   ap_none  |    imag_data_254_V    |    pointer   |
+|imag_data_255_V         |  in |   18|   ap_none  |    imag_data_255_V    |    pointer   |
+|magn_data_0_V           | out |   24|   ap_vld   |     magn_data_0_V     |    pointer   |
+|magn_data_0_V_ap_vld    | out |    1|   ap_vld   |     magn_data_0_V     |    pointer   |
+|magn_data_1_V           | out |   24|   ap_vld   |     magn_data_1_V     |    pointer   |
+|magn_data_1_V_ap_vld    | out |    1|   ap_vld   |     magn_data_1_V     |    pointer   |
+|magn_data_2_V           | out |   24|   ap_vld   |     magn_data_2_V     |    pointer   |
+|magn_data_2_V_ap_vld    | out |    1|   ap_vld   |     magn_data_2_V     |    pointer   |
+|magn_data_3_V           | out |   24|   ap_vld   |     magn_data_3_V     |    pointer   |
+|magn_data_3_V_ap_vld    | out |    1|   ap_vld   |     magn_data_3_V     |    pointer   |
+|magn_data_4_V           | out |   24|   ap_vld   |     magn_data_4_V     |    pointer   |
+|magn_data_4_V_ap_vld    | out |    1|   ap_vld   |     magn_data_4_V     |    pointer   |
+|magn_data_5_V           | out |   24|   ap_vld   |     magn_data_5_V     |    pointer   |
+|magn_data_5_V_ap_vld    | out |    1|   ap_vld   |     magn_data_5_V     |    pointer   |
+|magn_data_6_V           | out |   24|   ap_vld   |     magn_data_6_V     |    pointer   |
+|magn_data_6_V_ap_vld    | out |    1|   ap_vld   |     magn_data_6_V     |    pointer   |
+|magn_data_7_V           | out |   24|   ap_vld   |     magn_data_7_V     |    pointer   |
+|magn_data_7_V_ap_vld    | out |    1|   ap_vld   |     magn_data_7_V     |    pointer   |
+|magn_data_8_V           | out |   24|   ap_vld   |     magn_data_8_V     |    pointer   |
+|magn_data_8_V_ap_vld    | out |    1|   ap_vld   |     magn_data_8_V     |    pointer   |
+|magn_data_9_V           | out |   24|   ap_vld   |     magn_data_9_V     |    pointer   |
+|magn_data_9_V_ap_vld    | out |    1|   ap_vld   |     magn_data_9_V     |    pointer   |
+|magn_data_10_V          | out |   24|   ap_vld   |     magn_data_10_V    |    pointer   |
+|magn_data_10_V_ap_vld   | out |    1|   ap_vld   |     magn_data_10_V    |    pointer   |
+|magn_data_11_V          | out |   24|   ap_vld   |     magn_data_11_V    |    pointer   |
+|magn_data_11_V_ap_vld   | out |    1|   ap_vld   |     magn_data_11_V    |    pointer   |
+|magn_data_12_V          | out |   24|   ap_vld   |     magn_data_12_V    |    pointer   |
+|magn_data_12_V_ap_vld   | out |    1|   ap_vld   |     magn_data_12_V    |    pointer   |
+|magn_data_13_V          | out |   24|   ap_vld   |     magn_data_13_V    |    pointer   |
+|magn_data_13_V_ap_vld   | out |    1|   ap_vld   |     magn_data_13_V    |    pointer   |
+|magn_data_14_V          | out |   24|   ap_vld   |     magn_data_14_V    |    pointer   |
+|magn_data_14_V_ap_vld   | out |    1|   ap_vld   |     magn_data_14_V    |    pointer   |
+|magn_data_15_V          | out |   24|   ap_vld   |     magn_data_15_V    |    pointer   |
+|magn_data_15_V_ap_vld   | out |    1|   ap_vld   |     magn_data_15_V    |    pointer   |
+|magn_data_16_V          | out |   24|   ap_vld   |     magn_data_16_V    |    pointer   |
+|magn_data_16_V_ap_vld   | out |    1|   ap_vld   |     magn_data_16_V    |    pointer   |
+|magn_data_17_V          | out |   24|   ap_vld   |     magn_data_17_V    |    pointer   |
+|magn_data_17_V_ap_vld   | out |    1|   ap_vld   |     magn_data_17_V    |    pointer   |
+|magn_data_18_V          | out |   24|   ap_vld   |     magn_data_18_V    |    pointer   |
+|magn_data_18_V_ap_vld   | out |    1|   ap_vld   |     magn_data_18_V    |    pointer   |
+|magn_data_19_V          | out |   24|   ap_vld   |     magn_data_19_V    |    pointer   |
+|magn_data_19_V_ap_vld   | out |    1|   ap_vld   |     magn_data_19_V    |    pointer   |
+|magn_data_20_V          | out |   24|   ap_vld   |     magn_data_20_V    |    pointer   |
+|magn_data_20_V_ap_vld   | out |    1|   ap_vld   |     magn_data_20_V    |    pointer   |
+|magn_data_21_V          | out |   24|   ap_vld   |     magn_data_21_V    |    pointer   |
+|magn_data_21_V_ap_vld   | out |    1|   ap_vld   |     magn_data_21_V    |    pointer   |
+|magn_data_22_V          | out |   24|   ap_vld   |     magn_data_22_V    |    pointer   |
+|magn_data_22_V_ap_vld   | out |    1|   ap_vld   |     magn_data_22_V    |    pointer   |
+|magn_data_23_V          | out |   24|   ap_vld   |     magn_data_23_V    |    pointer   |
+|magn_data_23_V_ap_vld   | out |    1|   ap_vld   |     magn_data_23_V    |    pointer   |
+|magn_data_24_V          | out |   24|   ap_vld   |     magn_data_24_V    |    pointer   |
+|magn_data_24_V_ap_vld   | out |    1|   ap_vld   |     magn_data_24_V    |    pointer   |
+|magn_data_25_V          | out |   24|   ap_vld   |     magn_data_25_V    |    pointer   |
+|magn_data_25_V_ap_vld   | out |    1|   ap_vld   |     magn_data_25_V    |    pointer   |
+|magn_data_26_V          | out |   24|   ap_vld   |     magn_data_26_V    |    pointer   |
+|magn_data_26_V_ap_vld   | out |    1|   ap_vld   |     magn_data_26_V    |    pointer   |
+|magn_data_27_V          | out |   24|   ap_vld   |     magn_data_27_V    |    pointer   |
+|magn_data_27_V_ap_vld   | out |    1|   ap_vld   |     magn_data_27_V    |    pointer   |
+|magn_data_28_V          | out |   24|   ap_vld   |     magn_data_28_V    |    pointer   |
+|magn_data_28_V_ap_vld   | out |    1|   ap_vld   |     magn_data_28_V    |    pointer   |
+|magn_data_29_V          | out |   24|   ap_vld   |     magn_data_29_V    |    pointer   |
+|magn_data_29_V_ap_vld   | out |    1|   ap_vld   |     magn_data_29_V    |    pointer   |
+|magn_data_30_V          | out |   24|   ap_vld   |     magn_data_30_V    |    pointer   |
+|magn_data_30_V_ap_vld   | out |    1|   ap_vld   |     magn_data_30_V    |    pointer   |
+|magn_data_31_V          | out |   24|   ap_vld   |     magn_data_31_V    |    pointer   |
+|magn_data_31_V_ap_vld   | out |    1|   ap_vld   |     magn_data_31_V    |    pointer   |
+|magn_data_32_V          | out |   24|   ap_vld   |     magn_data_32_V    |    pointer   |
+|magn_data_32_V_ap_vld   | out |    1|   ap_vld   |     magn_data_32_V    |    pointer   |
+|magn_data_33_V          | out |   24|   ap_vld   |     magn_data_33_V    |    pointer   |
+|magn_data_33_V_ap_vld   | out |    1|   ap_vld   |     magn_data_33_V    |    pointer   |
+|magn_data_34_V          | out |   24|   ap_vld   |     magn_data_34_V    |    pointer   |
+|magn_data_34_V_ap_vld   | out |    1|   ap_vld   |     magn_data_34_V    |    pointer   |
+|magn_data_35_V          | out |   24|   ap_vld   |     magn_data_35_V    |    pointer   |
+|magn_data_35_V_ap_vld   | out |    1|   ap_vld   |     magn_data_35_V    |    pointer   |
+|magn_data_36_V          | out |   24|   ap_vld   |     magn_data_36_V    |    pointer   |
+|magn_data_36_V_ap_vld   | out |    1|   ap_vld   |     magn_data_36_V    |    pointer   |
+|magn_data_37_V          | out |   24|   ap_vld   |     magn_data_37_V    |    pointer   |
+|magn_data_37_V_ap_vld   | out |    1|   ap_vld   |     magn_data_37_V    |    pointer   |
+|magn_data_38_V          | out |   24|   ap_vld   |     magn_data_38_V    |    pointer   |
+|magn_data_38_V_ap_vld   | out |    1|   ap_vld   |     magn_data_38_V    |    pointer   |
+|magn_data_39_V          | out |   24|   ap_vld   |     magn_data_39_V    |    pointer   |
+|magn_data_39_V_ap_vld   | out |    1|   ap_vld   |     magn_data_39_V    |    pointer   |
+|magn_data_40_V          | out |   24|   ap_vld   |     magn_data_40_V    |    pointer   |
+|magn_data_40_V_ap_vld   | out |    1|   ap_vld   |     magn_data_40_V    |    pointer   |
+|magn_data_41_V          | out |   24|   ap_vld   |     magn_data_41_V    |    pointer   |
+|magn_data_41_V_ap_vld   | out |    1|   ap_vld   |     magn_data_41_V    |    pointer   |
+|magn_data_42_V          | out |   24|   ap_vld   |     magn_data_42_V    |    pointer   |
+|magn_data_42_V_ap_vld   | out |    1|   ap_vld   |     magn_data_42_V    |    pointer   |
+|magn_data_43_V          | out |   24|   ap_vld   |     magn_data_43_V    |    pointer   |
+|magn_data_43_V_ap_vld   | out |    1|   ap_vld   |     magn_data_43_V    |    pointer   |
+|magn_data_44_V          | out |   24|   ap_vld   |     magn_data_44_V    |    pointer   |
+|magn_data_44_V_ap_vld   | out |    1|   ap_vld   |     magn_data_44_V    |    pointer   |
+|magn_data_45_V          | out |   24|   ap_vld   |     magn_data_45_V    |    pointer   |
+|magn_data_45_V_ap_vld   | out |    1|   ap_vld   |     magn_data_45_V    |    pointer   |
+|magn_data_46_V          | out |   24|   ap_vld   |     magn_data_46_V    |    pointer   |
+|magn_data_46_V_ap_vld   | out |    1|   ap_vld   |     magn_data_46_V    |    pointer   |
+|magn_data_47_V          | out |   24|   ap_vld   |     magn_data_47_V    |    pointer   |
+|magn_data_47_V_ap_vld   | out |    1|   ap_vld   |     magn_data_47_V    |    pointer   |
+|magn_data_48_V          | out |   24|   ap_vld   |     magn_data_48_V    |    pointer   |
+|magn_data_48_V_ap_vld   | out |    1|   ap_vld   |     magn_data_48_V    |    pointer   |
+|magn_data_49_V          | out |   24|   ap_vld   |     magn_data_49_V    |    pointer   |
+|magn_data_49_V_ap_vld   | out |    1|   ap_vld   |     magn_data_49_V    |    pointer   |
+|magn_data_50_V          | out |   24|   ap_vld   |     magn_data_50_V    |    pointer   |
+|magn_data_50_V_ap_vld   | out |    1|   ap_vld   |     magn_data_50_V    |    pointer   |
+|magn_data_51_V          | out |   24|   ap_vld   |     magn_data_51_V    |    pointer   |
+|magn_data_51_V_ap_vld   | out |    1|   ap_vld   |     magn_data_51_V    |    pointer   |
+|magn_data_52_V          | out |   24|   ap_vld   |     magn_data_52_V    |    pointer   |
+|magn_data_52_V_ap_vld   | out |    1|   ap_vld   |     magn_data_52_V    |    pointer   |
+|magn_data_53_V          | out |   24|   ap_vld   |     magn_data_53_V    |    pointer   |
+|magn_data_53_V_ap_vld   | out |    1|   ap_vld   |     magn_data_53_V    |    pointer   |
+|magn_data_54_V          | out |   24|   ap_vld   |     magn_data_54_V    |    pointer   |
+|magn_data_54_V_ap_vld   | out |    1|   ap_vld   |     magn_data_54_V    |    pointer   |
+|magn_data_55_V          | out |   24|   ap_vld   |     magn_data_55_V    |    pointer   |
+|magn_data_55_V_ap_vld   | out |    1|   ap_vld   |     magn_data_55_V    |    pointer   |
+|magn_data_56_V          | out |   24|   ap_vld   |     magn_data_56_V    |    pointer   |
+|magn_data_56_V_ap_vld   | out |    1|   ap_vld   |     magn_data_56_V    |    pointer   |
+|magn_data_57_V          | out |   24|   ap_vld   |     magn_data_57_V    |    pointer   |
+|magn_data_57_V_ap_vld   | out |    1|   ap_vld   |     magn_data_57_V    |    pointer   |
+|magn_data_58_V          | out |   24|   ap_vld   |     magn_data_58_V    |    pointer   |
+|magn_data_58_V_ap_vld   | out |    1|   ap_vld   |     magn_data_58_V    |    pointer   |
+|magn_data_59_V          | out |   24|   ap_vld   |     magn_data_59_V    |    pointer   |
+|magn_data_59_V_ap_vld   | out |    1|   ap_vld   |     magn_data_59_V    |    pointer   |
+|magn_data_60_V          | out |   24|   ap_vld   |     magn_data_60_V    |    pointer   |
+|magn_data_60_V_ap_vld   | out |    1|   ap_vld   |     magn_data_60_V    |    pointer   |
+|magn_data_61_V          | out |   24|   ap_vld   |     magn_data_61_V    |    pointer   |
+|magn_data_61_V_ap_vld   | out |    1|   ap_vld   |     magn_data_61_V    |    pointer   |
+|magn_data_62_V          | out |   24|   ap_vld   |     magn_data_62_V    |    pointer   |
+|magn_data_62_V_ap_vld   | out |    1|   ap_vld   |     magn_data_62_V    |    pointer   |
+|magn_data_63_V          | out |   24|   ap_vld   |     magn_data_63_V    |    pointer   |
+|magn_data_63_V_ap_vld   | out |    1|   ap_vld   |     magn_data_63_V    |    pointer   |
+|magn_data_64_V          | out |   24|   ap_vld   |     magn_data_64_V    |    pointer   |
+|magn_data_64_V_ap_vld   | out |    1|   ap_vld   |     magn_data_64_V    |    pointer   |
+|magn_data_65_V          | out |   24|   ap_vld   |     magn_data_65_V    |    pointer   |
+|magn_data_65_V_ap_vld   | out |    1|   ap_vld   |     magn_data_65_V    |    pointer   |
+|magn_data_66_V          | out |   24|   ap_vld   |     magn_data_66_V    |    pointer   |
+|magn_data_66_V_ap_vld   | out |    1|   ap_vld   |     magn_data_66_V    |    pointer   |
+|magn_data_67_V          | out |   24|   ap_vld   |     magn_data_67_V    |    pointer   |
+|magn_data_67_V_ap_vld   | out |    1|   ap_vld   |     magn_data_67_V    |    pointer   |
+|magn_data_68_V          | out |   24|   ap_vld   |     magn_data_68_V    |    pointer   |
+|magn_data_68_V_ap_vld   | out |    1|   ap_vld   |     magn_data_68_V    |    pointer   |
+|magn_data_69_V          | out |   24|   ap_vld   |     magn_data_69_V    |    pointer   |
+|magn_data_69_V_ap_vld   | out |    1|   ap_vld   |     magn_data_69_V    |    pointer   |
+|magn_data_70_V          | out |   24|   ap_vld   |     magn_data_70_V    |    pointer   |
+|magn_data_70_V_ap_vld   | out |    1|   ap_vld   |     magn_data_70_V    |    pointer   |
+|magn_data_71_V          | out |   24|   ap_vld   |     magn_data_71_V    |    pointer   |
+|magn_data_71_V_ap_vld   | out |    1|   ap_vld   |     magn_data_71_V    |    pointer   |
+|magn_data_72_V          | out |   24|   ap_vld   |     magn_data_72_V    |    pointer   |
+|magn_data_72_V_ap_vld   | out |    1|   ap_vld   |     magn_data_72_V    |    pointer   |
+|magn_data_73_V          | out |   24|   ap_vld   |     magn_data_73_V    |    pointer   |
+|magn_data_73_V_ap_vld   | out |    1|   ap_vld   |     magn_data_73_V    |    pointer   |
+|magn_data_74_V          | out |   24|   ap_vld   |     magn_data_74_V    |    pointer   |
+|magn_data_74_V_ap_vld   | out |    1|   ap_vld   |     magn_data_74_V    |    pointer   |
+|magn_data_75_V          | out |   24|   ap_vld   |     magn_data_75_V    |    pointer   |
+|magn_data_75_V_ap_vld   | out |    1|   ap_vld   |     magn_data_75_V    |    pointer   |
+|magn_data_76_V          | out |   24|   ap_vld   |     magn_data_76_V    |    pointer   |
+|magn_data_76_V_ap_vld   | out |    1|   ap_vld   |     magn_data_76_V    |    pointer   |
+|magn_data_77_V          | out |   24|   ap_vld   |     magn_data_77_V    |    pointer   |
+|magn_data_77_V_ap_vld   | out |    1|   ap_vld   |     magn_data_77_V    |    pointer   |
+|magn_data_78_V          | out |   24|   ap_vld   |     magn_data_78_V    |    pointer   |
+|magn_data_78_V_ap_vld   | out |    1|   ap_vld   |     magn_data_78_V    |    pointer   |
+|magn_data_79_V          | out |   24|   ap_vld   |     magn_data_79_V    |    pointer   |
+|magn_data_79_V_ap_vld   | out |    1|   ap_vld   |     magn_data_79_V    |    pointer   |
+|magn_data_80_V          | out |   24|   ap_vld   |     magn_data_80_V    |    pointer   |
+|magn_data_80_V_ap_vld   | out |    1|   ap_vld   |     magn_data_80_V    |    pointer   |
+|magn_data_81_V          | out |   24|   ap_vld   |     magn_data_81_V    |    pointer   |
+|magn_data_81_V_ap_vld   | out |    1|   ap_vld   |     magn_data_81_V    |    pointer   |
+|magn_data_82_V          | out |   24|   ap_vld   |     magn_data_82_V    |    pointer   |
+|magn_data_82_V_ap_vld   | out |    1|   ap_vld   |     magn_data_82_V    |    pointer   |
+|magn_data_83_V          | out |   24|   ap_vld   |     magn_data_83_V    |    pointer   |
+|magn_data_83_V_ap_vld   | out |    1|   ap_vld   |     magn_data_83_V    |    pointer   |
+|magn_data_84_V          | out |   24|   ap_vld   |     magn_data_84_V    |    pointer   |
+|magn_data_84_V_ap_vld   | out |    1|   ap_vld   |     magn_data_84_V    |    pointer   |
+|magn_data_85_V          | out |   24|   ap_vld   |     magn_data_85_V    |    pointer   |
+|magn_data_85_V_ap_vld   | out |    1|   ap_vld   |     magn_data_85_V    |    pointer   |
+|magn_data_86_V          | out |   24|   ap_vld   |     magn_data_86_V    |    pointer   |
+|magn_data_86_V_ap_vld   | out |    1|   ap_vld   |     magn_data_86_V    |    pointer   |
+|magn_data_87_V          | out |   24|   ap_vld   |     magn_data_87_V    |    pointer   |
+|magn_data_87_V_ap_vld   | out |    1|   ap_vld   |     magn_data_87_V    |    pointer   |
+|magn_data_88_V          | out |   24|   ap_vld   |     magn_data_88_V    |    pointer   |
+|magn_data_88_V_ap_vld   | out |    1|   ap_vld   |     magn_data_88_V    |    pointer   |
+|magn_data_89_V          | out |   24|   ap_vld   |     magn_data_89_V    |    pointer   |
+|magn_data_89_V_ap_vld   | out |    1|   ap_vld   |     magn_data_89_V    |    pointer   |
+|magn_data_90_V          | out |   24|   ap_vld   |     magn_data_90_V    |    pointer   |
+|magn_data_90_V_ap_vld   | out |    1|   ap_vld   |     magn_data_90_V    |    pointer   |
+|magn_data_91_V          | out |   24|   ap_vld   |     magn_data_91_V    |    pointer   |
+|magn_data_91_V_ap_vld   | out |    1|   ap_vld   |     magn_data_91_V    |    pointer   |
+|magn_data_92_V          | out |   24|   ap_vld   |     magn_data_92_V    |    pointer   |
+|magn_data_92_V_ap_vld   | out |    1|   ap_vld   |     magn_data_92_V    |    pointer   |
+|magn_data_93_V          | out |   24|   ap_vld   |     magn_data_93_V    |    pointer   |
+|magn_data_93_V_ap_vld   | out |    1|   ap_vld   |     magn_data_93_V    |    pointer   |
+|magn_data_94_V          | out |   24|   ap_vld   |     magn_data_94_V    |    pointer   |
+|magn_data_94_V_ap_vld   | out |    1|   ap_vld   |     magn_data_94_V    |    pointer   |
+|magn_data_95_V          | out |   24|   ap_vld   |     magn_data_95_V    |    pointer   |
+|magn_data_95_V_ap_vld   | out |    1|   ap_vld   |     magn_data_95_V    |    pointer   |
+|magn_data_96_V          | out |   24|   ap_vld   |     magn_data_96_V    |    pointer   |
+|magn_data_96_V_ap_vld   | out |    1|   ap_vld   |     magn_data_96_V    |    pointer   |
+|magn_data_97_V          | out |   24|   ap_vld   |     magn_data_97_V    |    pointer   |
+|magn_data_97_V_ap_vld   | out |    1|   ap_vld   |     magn_data_97_V    |    pointer   |
+|magn_data_98_V          | out |   24|   ap_vld   |     magn_data_98_V    |    pointer   |
+|magn_data_98_V_ap_vld   | out |    1|   ap_vld   |     magn_data_98_V    |    pointer   |
+|magn_data_99_V          | out |   24|   ap_vld   |     magn_data_99_V    |    pointer   |
+|magn_data_99_V_ap_vld   | out |    1|   ap_vld   |     magn_data_99_V    |    pointer   |
+|magn_data_100_V         | out |   24|   ap_vld   |    magn_data_100_V    |    pointer   |
+|magn_data_100_V_ap_vld  | out |    1|   ap_vld   |    magn_data_100_V    |    pointer   |
+|magn_data_101_V         | out |   24|   ap_vld   |    magn_data_101_V    |    pointer   |
+|magn_data_101_V_ap_vld  | out |    1|   ap_vld   |    magn_data_101_V    |    pointer   |
+|magn_data_102_V         | out |   24|   ap_vld   |    magn_data_102_V    |    pointer   |
+|magn_data_102_V_ap_vld  | out |    1|   ap_vld   |    magn_data_102_V    |    pointer   |
+|magn_data_103_V         | out |   24|   ap_vld   |    magn_data_103_V    |    pointer   |
+|magn_data_103_V_ap_vld  | out |    1|   ap_vld   |    magn_data_103_V    |    pointer   |
+|magn_data_104_V         | out |   24|   ap_vld   |    magn_data_104_V    |    pointer   |
+|magn_data_104_V_ap_vld  | out |    1|   ap_vld   |    magn_data_104_V    |    pointer   |
+|magn_data_105_V         | out |   24|   ap_vld   |    magn_data_105_V    |    pointer   |
+|magn_data_105_V_ap_vld  | out |    1|   ap_vld   |    magn_data_105_V    |    pointer   |
+|magn_data_106_V         | out |   24|   ap_vld   |    magn_data_106_V    |    pointer   |
+|magn_data_106_V_ap_vld  | out |    1|   ap_vld   |    magn_data_106_V    |    pointer   |
+|magn_data_107_V         | out |   24|   ap_vld   |    magn_data_107_V    |    pointer   |
+|magn_data_107_V_ap_vld  | out |    1|   ap_vld   |    magn_data_107_V    |    pointer   |
+|magn_data_108_V         | out |   24|   ap_vld   |    magn_data_108_V    |    pointer   |
+|magn_data_108_V_ap_vld  | out |    1|   ap_vld   |    magn_data_108_V    |    pointer   |
+|magn_data_109_V         | out |   24|   ap_vld   |    magn_data_109_V    |    pointer   |
+|magn_data_109_V_ap_vld  | out |    1|   ap_vld   |    magn_data_109_V    |    pointer   |
+|magn_data_110_V         | out |   24|   ap_vld   |    magn_data_110_V    |    pointer   |
+|magn_data_110_V_ap_vld  | out |    1|   ap_vld   |    magn_data_110_V    |    pointer   |
+|magn_data_111_V         | out |   24|   ap_vld   |    magn_data_111_V    |    pointer   |
+|magn_data_111_V_ap_vld  | out |    1|   ap_vld   |    magn_data_111_V    |    pointer   |
+|magn_data_112_V         | out |   24|   ap_vld   |    magn_data_112_V    |    pointer   |
+|magn_data_112_V_ap_vld  | out |    1|   ap_vld   |    magn_data_112_V    |    pointer   |
+|magn_data_113_V         | out |   24|   ap_vld   |    magn_data_113_V    |    pointer   |
+|magn_data_113_V_ap_vld  | out |    1|   ap_vld   |    magn_data_113_V    |    pointer   |
+|magn_data_114_V         | out |   24|   ap_vld   |    magn_data_114_V    |    pointer   |
+|magn_data_114_V_ap_vld  | out |    1|   ap_vld   |    magn_data_114_V    |    pointer   |
+|magn_data_115_V         | out |   24|   ap_vld   |    magn_data_115_V    |    pointer   |
+|magn_data_115_V_ap_vld  | out |    1|   ap_vld   |    magn_data_115_V    |    pointer   |
+|magn_data_116_V         | out |   24|   ap_vld   |    magn_data_116_V    |    pointer   |
+|magn_data_116_V_ap_vld  | out |    1|   ap_vld   |    magn_data_116_V    |    pointer   |
+|magn_data_117_V         | out |   24|   ap_vld   |    magn_data_117_V    |    pointer   |
+|magn_data_117_V_ap_vld  | out |    1|   ap_vld   |    magn_data_117_V    |    pointer   |
+|magn_data_118_V         | out |   24|   ap_vld   |    magn_data_118_V    |    pointer   |
+|magn_data_118_V_ap_vld  | out |    1|   ap_vld   |    magn_data_118_V    |    pointer   |
+|magn_data_119_V         | out |   24|   ap_vld   |    magn_data_119_V    |    pointer   |
+|magn_data_119_V_ap_vld  | out |    1|   ap_vld   |    magn_data_119_V    |    pointer   |
+|magn_data_120_V         | out |   24|   ap_vld   |    magn_data_120_V    |    pointer   |
+|magn_data_120_V_ap_vld  | out |    1|   ap_vld   |    magn_data_120_V    |    pointer   |
+|magn_data_121_V         | out |   24|   ap_vld   |    magn_data_121_V    |    pointer   |
+|magn_data_121_V_ap_vld  | out |    1|   ap_vld   |    magn_data_121_V    |    pointer   |
+|magn_data_122_V         | out |   24|   ap_vld   |    magn_data_122_V    |    pointer   |
+|magn_data_122_V_ap_vld  | out |    1|   ap_vld   |    magn_data_122_V    |    pointer   |
+|magn_data_123_V         | out |   24|   ap_vld   |    magn_data_123_V    |    pointer   |
+|magn_data_123_V_ap_vld  | out |    1|   ap_vld   |    magn_data_123_V    |    pointer   |
+|magn_data_124_V         | out |   24|   ap_vld   |    magn_data_124_V    |    pointer   |
+|magn_data_124_V_ap_vld  | out |    1|   ap_vld   |    magn_data_124_V    |    pointer   |
+|magn_data_125_V         | out |   24|   ap_vld   |    magn_data_125_V    |    pointer   |
+|magn_data_125_V_ap_vld  | out |    1|   ap_vld   |    magn_data_125_V    |    pointer   |
+|magn_data_126_V         | out |   24|   ap_vld   |    magn_data_126_V    |    pointer   |
+|magn_data_126_V_ap_vld  | out |    1|   ap_vld   |    magn_data_126_V    |    pointer   |
+|magn_data_127_V         | out |   24|   ap_vld   |    magn_data_127_V    |    pointer   |
+|magn_data_127_V_ap_vld  | out |    1|   ap_vld   |    magn_data_127_V    |    pointer   |
+|magn_data_128_V         | out |   24|   ap_vld   |    magn_data_128_V    |    pointer   |
+|magn_data_128_V_ap_vld  | out |    1|   ap_vld   |    magn_data_128_V    |    pointer   |
+|magn_data_129_V         | out |   24|   ap_vld   |    magn_data_129_V    |    pointer   |
+|magn_data_129_V_ap_vld  | out |    1|   ap_vld   |    magn_data_129_V    |    pointer   |
+|magn_data_130_V         | out |   24|   ap_vld   |    magn_data_130_V    |    pointer   |
+|magn_data_130_V_ap_vld  | out |    1|   ap_vld   |    magn_data_130_V    |    pointer   |
+|magn_data_131_V         | out |   24|   ap_vld   |    magn_data_131_V    |    pointer   |
+|magn_data_131_V_ap_vld  | out |    1|   ap_vld   |    magn_data_131_V    |    pointer   |
+|magn_data_132_V         | out |   24|   ap_vld   |    magn_data_132_V    |    pointer   |
+|magn_data_132_V_ap_vld  | out |    1|   ap_vld   |    magn_data_132_V    |    pointer   |
+|magn_data_133_V         | out |   24|   ap_vld   |    magn_data_133_V    |    pointer   |
+|magn_data_133_V_ap_vld  | out |    1|   ap_vld   |    magn_data_133_V    |    pointer   |
+|magn_data_134_V         | out |   24|   ap_vld   |    magn_data_134_V    |    pointer   |
+|magn_data_134_V_ap_vld  | out |    1|   ap_vld   |    magn_data_134_V    |    pointer   |
+|magn_data_135_V         | out |   24|   ap_vld   |    magn_data_135_V    |    pointer   |
+|magn_data_135_V_ap_vld  | out |    1|   ap_vld   |    magn_data_135_V    |    pointer   |
+|magn_data_136_V         | out |   24|   ap_vld   |    magn_data_136_V    |    pointer   |
+|magn_data_136_V_ap_vld  | out |    1|   ap_vld   |    magn_data_136_V    |    pointer   |
+|magn_data_137_V         | out |   24|   ap_vld   |    magn_data_137_V    |    pointer   |
+|magn_data_137_V_ap_vld  | out |    1|   ap_vld   |    magn_data_137_V    |    pointer   |
+|magn_data_138_V         | out |   24|   ap_vld   |    magn_data_138_V    |    pointer   |
+|magn_data_138_V_ap_vld  | out |    1|   ap_vld   |    magn_data_138_V    |    pointer   |
+|magn_data_139_V         | out |   24|   ap_vld   |    magn_data_139_V    |    pointer   |
+|magn_data_139_V_ap_vld  | out |    1|   ap_vld   |    magn_data_139_V    |    pointer   |
+|magn_data_140_V         | out |   24|   ap_vld   |    magn_data_140_V    |    pointer   |
+|magn_data_140_V_ap_vld  | out |    1|   ap_vld   |    magn_data_140_V    |    pointer   |
+|magn_data_141_V         | out |   24|   ap_vld   |    magn_data_141_V    |    pointer   |
+|magn_data_141_V_ap_vld  | out |    1|   ap_vld   |    magn_data_141_V    |    pointer   |
+|magn_data_142_V         | out |   24|   ap_vld   |    magn_data_142_V    |    pointer   |
+|magn_data_142_V_ap_vld  | out |    1|   ap_vld   |    magn_data_142_V    |    pointer   |
+|magn_data_143_V         | out |   24|   ap_vld   |    magn_data_143_V    |    pointer   |
+|magn_data_143_V_ap_vld  | out |    1|   ap_vld   |    magn_data_143_V    |    pointer   |
+|magn_data_144_V         | out |   24|   ap_vld   |    magn_data_144_V    |    pointer   |
+|magn_data_144_V_ap_vld  | out |    1|   ap_vld   |    magn_data_144_V    |    pointer   |
+|magn_data_145_V         | out |   24|   ap_vld   |    magn_data_145_V    |    pointer   |
+|magn_data_145_V_ap_vld  | out |    1|   ap_vld   |    magn_data_145_V    |    pointer   |
+|magn_data_146_V         | out |   24|   ap_vld   |    magn_data_146_V    |    pointer   |
+|magn_data_146_V_ap_vld  | out |    1|   ap_vld   |    magn_data_146_V    |    pointer   |
+|magn_data_147_V         | out |   24|   ap_vld   |    magn_data_147_V    |    pointer   |
+|magn_data_147_V_ap_vld  | out |    1|   ap_vld   |    magn_data_147_V    |    pointer   |
+|magn_data_148_V         | out |   24|   ap_vld   |    magn_data_148_V    |    pointer   |
+|magn_data_148_V_ap_vld  | out |    1|   ap_vld   |    magn_data_148_V    |    pointer   |
+|magn_data_149_V         | out |   24|   ap_vld   |    magn_data_149_V    |    pointer   |
+|magn_data_149_V_ap_vld  | out |    1|   ap_vld   |    magn_data_149_V    |    pointer   |
+|magn_data_150_V         | out |   24|   ap_vld   |    magn_data_150_V    |    pointer   |
+|magn_data_150_V_ap_vld  | out |    1|   ap_vld   |    magn_data_150_V    |    pointer   |
+|magn_data_151_V         | out |   24|   ap_vld   |    magn_data_151_V    |    pointer   |
+|magn_data_151_V_ap_vld  | out |    1|   ap_vld   |    magn_data_151_V    |    pointer   |
+|magn_data_152_V         | out |   24|   ap_vld   |    magn_data_152_V    |    pointer   |
+|magn_data_152_V_ap_vld  | out |    1|   ap_vld   |    magn_data_152_V    |    pointer   |
+|magn_data_153_V         | out |   24|   ap_vld   |    magn_data_153_V    |    pointer   |
+|magn_data_153_V_ap_vld  | out |    1|   ap_vld   |    magn_data_153_V    |    pointer   |
+|magn_data_154_V         | out |   24|   ap_vld   |    magn_data_154_V    |    pointer   |
+|magn_data_154_V_ap_vld  | out |    1|   ap_vld   |    magn_data_154_V    |    pointer   |
+|magn_data_155_V         | out |   24|   ap_vld   |    magn_data_155_V    |    pointer   |
+|magn_data_155_V_ap_vld  | out |    1|   ap_vld   |    magn_data_155_V    |    pointer   |
+|magn_data_156_V         | out |   24|   ap_vld   |    magn_data_156_V    |    pointer   |
+|magn_data_156_V_ap_vld  | out |    1|   ap_vld   |    magn_data_156_V    |    pointer   |
+|magn_data_157_V         | out |   24|   ap_vld   |    magn_data_157_V    |    pointer   |
+|magn_data_157_V_ap_vld  | out |    1|   ap_vld   |    magn_data_157_V    |    pointer   |
+|magn_data_158_V         | out |   24|   ap_vld   |    magn_data_158_V    |    pointer   |
+|magn_data_158_V_ap_vld  | out |    1|   ap_vld   |    magn_data_158_V    |    pointer   |
+|magn_data_159_V         | out |   24|   ap_vld   |    magn_data_159_V    |    pointer   |
+|magn_data_159_V_ap_vld  | out |    1|   ap_vld   |    magn_data_159_V    |    pointer   |
+|magn_data_160_V         | out |   24|   ap_vld   |    magn_data_160_V    |    pointer   |
+|magn_data_160_V_ap_vld  | out |    1|   ap_vld   |    magn_data_160_V    |    pointer   |
+|magn_data_161_V         | out |   24|   ap_vld   |    magn_data_161_V    |    pointer   |
+|magn_data_161_V_ap_vld  | out |    1|   ap_vld   |    magn_data_161_V    |    pointer   |
+|magn_data_162_V         | out |   24|   ap_vld   |    magn_data_162_V    |    pointer   |
+|magn_data_162_V_ap_vld  | out |    1|   ap_vld   |    magn_data_162_V    |    pointer   |
+|magn_data_163_V         | out |   24|   ap_vld   |    magn_data_163_V    |    pointer   |
+|magn_data_163_V_ap_vld  | out |    1|   ap_vld   |    magn_data_163_V    |    pointer   |
+|magn_data_164_V         | out |   24|   ap_vld   |    magn_data_164_V    |    pointer   |
+|magn_data_164_V_ap_vld  | out |    1|   ap_vld   |    magn_data_164_V    |    pointer   |
+|magn_data_165_V         | out |   24|   ap_vld   |    magn_data_165_V    |    pointer   |
+|magn_data_165_V_ap_vld  | out |    1|   ap_vld   |    magn_data_165_V    |    pointer   |
+|magn_data_166_V         | out |   24|   ap_vld   |    magn_data_166_V    |    pointer   |
+|magn_data_166_V_ap_vld  | out |    1|   ap_vld   |    magn_data_166_V    |    pointer   |
+|magn_data_167_V         | out |   24|   ap_vld   |    magn_data_167_V    |    pointer   |
+|magn_data_167_V_ap_vld  | out |    1|   ap_vld   |    magn_data_167_V    |    pointer   |
+|magn_data_168_V         | out |   24|   ap_vld   |    magn_data_168_V    |    pointer   |
+|magn_data_168_V_ap_vld  | out |    1|   ap_vld   |    magn_data_168_V    |    pointer   |
+|magn_data_169_V         | out |   24|   ap_vld   |    magn_data_169_V    |    pointer   |
+|magn_data_169_V_ap_vld  | out |    1|   ap_vld   |    magn_data_169_V    |    pointer   |
+|magn_data_170_V         | out |   24|   ap_vld   |    magn_data_170_V    |    pointer   |
+|magn_data_170_V_ap_vld  | out |    1|   ap_vld   |    magn_data_170_V    |    pointer   |
+|magn_data_171_V         | out |   24|   ap_vld   |    magn_data_171_V    |    pointer   |
+|magn_data_171_V_ap_vld  | out |    1|   ap_vld   |    magn_data_171_V    |    pointer   |
+|magn_data_172_V         | out |   24|   ap_vld   |    magn_data_172_V    |    pointer   |
+|magn_data_172_V_ap_vld  | out |    1|   ap_vld   |    magn_data_172_V    |    pointer   |
+|magn_data_173_V         | out |   24|   ap_vld   |    magn_data_173_V    |    pointer   |
+|magn_data_173_V_ap_vld  | out |    1|   ap_vld   |    magn_data_173_V    |    pointer   |
+|magn_data_174_V         | out |   24|   ap_vld   |    magn_data_174_V    |    pointer   |
+|magn_data_174_V_ap_vld  | out |    1|   ap_vld   |    magn_data_174_V    |    pointer   |
+|magn_data_175_V         | out |   24|   ap_vld   |    magn_data_175_V    |    pointer   |
+|magn_data_175_V_ap_vld  | out |    1|   ap_vld   |    magn_data_175_V    |    pointer   |
+|magn_data_176_V         | out |   24|   ap_vld   |    magn_data_176_V    |    pointer   |
+|magn_data_176_V_ap_vld  | out |    1|   ap_vld   |    magn_data_176_V    |    pointer   |
+|magn_data_177_V         | out |   24|   ap_vld   |    magn_data_177_V    |    pointer   |
+|magn_data_177_V_ap_vld  | out |    1|   ap_vld   |    magn_data_177_V    |    pointer   |
+|magn_data_178_V         | out |   24|   ap_vld   |    magn_data_178_V    |    pointer   |
+|magn_data_178_V_ap_vld  | out |    1|   ap_vld   |    magn_data_178_V    |    pointer   |
+|magn_data_179_V         | out |   24|   ap_vld   |    magn_data_179_V    |    pointer   |
+|magn_data_179_V_ap_vld  | out |    1|   ap_vld   |    magn_data_179_V    |    pointer   |
+|magn_data_180_V         | out |   24|   ap_vld   |    magn_data_180_V    |    pointer   |
+|magn_data_180_V_ap_vld  | out |    1|   ap_vld   |    magn_data_180_V    |    pointer   |
+|magn_data_181_V         | out |   24|   ap_vld   |    magn_data_181_V    |    pointer   |
+|magn_data_181_V_ap_vld  | out |    1|   ap_vld   |    magn_data_181_V    |    pointer   |
+|magn_data_182_V         | out |   24|   ap_vld   |    magn_data_182_V    |    pointer   |
+|magn_data_182_V_ap_vld  | out |    1|   ap_vld   |    magn_data_182_V    |    pointer   |
+|magn_data_183_V         | out |   24|   ap_vld   |    magn_data_183_V    |    pointer   |
+|magn_data_183_V_ap_vld  | out |    1|   ap_vld   |    magn_data_183_V    |    pointer   |
+|magn_data_184_V         | out |   24|   ap_vld   |    magn_data_184_V    |    pointer   |
+|magn_data_184_V_ap_vld  | out |    1|   ap_vld   |    magn_data_184_V    |    pointer   |
+|magn_data_185_V         | out |   24|   ap_vld   |    magn_data_185_V    |    pointer   |
+|magn_data_185_V_ap_vld  | out |    1|   ap_vld   |    magn_data_185_V    |    pointer   |
+|magn_data_186_V         | out |   24|   ap_vld   |    magn_data_186_V    |    pointer   |
+|magn_data_186_V_ap_vld  | out |    1|   ap_vld   |    magn_data_186_V    |    pointer   |
+|magn_data_187_V         | out |   24|   ap_vld   |    magn_data_187_V    |    pointer   |
+|magn_data_187_V_ap_vld  | out |    1|   ap_vld   |    magn_data_187_V    |    pointer   |
+|magn_data_188_V         | out |   24|   ap_vld   |    magn_data_188_V    |    pointer   |
+|magn_data_188_V_ap_vld  | out |    1|   ap_vld   |    magn_data_188_V    |    pointer   |
+|magn_data_189_V         | out |   24|   ap_vld   |    magn_data_189_V    |    pointer   |
+|magn_data_189_V_ap_vld  | out |    1|   ap_vld   |    magn_data_189_V    |    pointer   |
+|magn_data_190_V         | out |   24|   ap_vld   |    magn_data_190_V    |    pointer   |
+|magn_data_190_V_ap_vld  | out |    1|   ap_vld   |    magn_data_190_V    |    pointer   |
+|magn_data_191_V         | out |   24|   ap_vld   |    magn_data_191_V    |    pointer   |
+|magn_data_191_V_ap_vld  | out |    1|   ap_vld   |    magn_data_191_V    |    pointer   |
+|magn_data_192_V         | out |   24|   ap_vld   |    magn_data_192_V    |    pointer   |
+|magn_data_192_V_ap_vld  | out |    1|   ap_vld   |    magn_data_192_V    |    pointer   |
+|magn_data_193_V         | out |   24|   ap_vld   |    magn_data_193_V    |    pointer   |
+|magn_data_193_V_ap_vld  | out |    1|   ap_vld   |    magn_data_193_V    |    pointer   |
+|magn_data_194_V         | out |   24|   ap_vld   |    magn_data_194_V    |    pointer   |
+|magn_data_194_V_ap_vld  | out |    1|   ap_vld   |    magn_data_194_V    |    pointer   |
+|magn_data_195_V         | out |   24|   ap_vld   |    magn_data_195_V    |    pointer   |
+|magn_data_195_V_ap_vld  | out |    1|   ap_vld   |    magn_data_195_V    |    pointer   |
+|magn_data_196_V         | out |   24|   ap_vld   |    magn_data_196_V    |    pointer   |
+|magn_data_196_V_ap_vld  | out |    1|   ap_vld   |    magn_data_196_V    |    pointer   |
+|magn_data_197_V         | out |   24|   ap_vld   |    magn_data_197_V    |    pointer   |
+|magn_data_197_V_ap_vld  | out |    1|   ap_vld   |    magn_data_197_V    |    pointer   |
+|magn_data_198_V         | out |   24|   ap_vld   |    magn_data_198_V    |    pointer   |
+|magn_data_198_V_ap_vld  | out |    1|   ap_vld   |    magn_data_198_V    |    pointer   |
+|magn_data_199_V         | out |   24|   ap_vld   |    magn_data_199_V    |    pointer   |
+|magn_data_199_V_ap_vld  | out |    1|   ap_vld   |    magn_data_199_V    |    pointer   |
+|magn_data_200_V         | out |   24|   ap_vld   |    magn_data_200_V    |    pointer   |
+|magn_data_200_V_ap_vld  | out |    1|   ap_vld   |    magn_data_200_V    |    pointer   |
+|magn_data_201_V         | out |   24|   ap_vld   |    magn_data_201_V    |    pointer   |
+|magn_data_201_V_ap_vld  | out |    1|   ap_vld   |    magn_data_201_V    |    pointer   |
+|magn_data_202_V         | out |   24|   ap_vld   |    magn_data_202_V    |    pointer   |
+|magn_data_202_V_ap_vld  | out |    1|   ap_vld   |    magn_data_202_V    |    pointer   |
+|magn_data_203_V         | out |   24|   ap_vld   |    magn_data_203_V    |    pointer   |
+|magn_data_203_V_ap_vld  | out |    1|   ap_vld   |    magn_data_203_V    |    pointer   |
+|magn_data_204_V         | out |   24|   ap_vld   |    magn_data_204_V    |    pointer   |
+|magn_data_204_V_ap_vld  | out |    1|   ap_vld   |    magn_data_204_V    |    pointer   |
+|magn_data_205_V         | out |   24|   ap_vld   |    magn_data_205_V    |    pointer   |
+|magn_data_205_V_ap_vld  | out |    1|   ap_vld   |    magn_data_205_V    |    pointer   |
+|magn_data_206_V         | out |   24|   ap_vld   |    magn_data_206_V    |    pointer   |
+|magn_data_206_V_ap_vld  | out |    1|   ap_vld   |    magn_data_206_V    |    pointer   |
+|magn_data_207_V         | out |   24|   ap_vld   |    magn_data_207_V    |    pointer   |
+|magn_data_207_V_ap_vld  | out |    1|   ap_vld   |    magn_data_207_V    |    pointer   |
+|magn_data_208_V         | out |   24|   ap_vld   |    magn_data_208_V    |    pointer   |
+|magn_data_208_V_ap_vld  | out |    1|   ap_vld   |    magn_data_208_V    |    pointer   |
+|magn_data_209_V         | out |   24|   ap_vld   |    magn_data_209_V    |    pointer   |
+|magn_data_209_V_ap_vld  | out |    1|   ap_vld   |    magn_data_209_V    |    pointer   |
+|magn_data_210_V         | out |   24|   ap_vld   |    magn_data_210_V    |    pointer   |
+|magn_data_210_V_ap_vld  | out |    1|   ap_vld   |    magn_data_210_V    |    pointer   |
+|magn_data_211_V         | out |   24|   ap_vld   |    magn_data_211_V    |    pointer   |
+|magn_data_211_V_ap_vld  | out |    1|   ap_vld   |    magn_data_211_V    |    pointer   |
+|magn_data_212_V         | out |   24|   ap_vld   |    magn_data_212_V    |    pointer   |
+|magn_data_212_V_ap_vld  | out |    1|   ap_vld   |    magn_data_212_V    |    pointer   |
+|magn_data_213_V         | out |   24|   ap_vld   |    magn_data_213_V    |    pointer   |
+|magn_data_213_V_ap_vld  | out |    1|   ap_vld   |    magn_data_213_V    |    pointer   |
+|magn_data_214_V         | out |   24|   ap_vld   |    magn_data_214_V    |    pointer   |
+|magn_data_214_V_ap_vld  | out |    1|   ap_vld   |    magn_data_214_V    |    pointer   |
+|magn_data_215_V         | out |   24|   ap_vld   |    magn_data_215_V    |    pointer   |
+|magn_data_215_V_ap_vld  | out |    1|   ap_vld   |    magn_data_215_V    |    pointer   |
+|magn_data_216_V         | out |   24|   ap_vld   |    magn_data_216_V    |    pointer   |
+|magn_data_216_V_ap_vld  | out |    1|   ap_vld   |    magn_data_216_V    |    pointer   |
+|magn_data_217_V         | out |   24|   ap_vld   |    magn_data_217_V    |    pointer   |
+|magn_data_217_V_ap_vld  | out |    1|   ap_vld   |    magn_data_217_V    |    pointer   |
+|magn_data_218_V         | out |   24|   ap_vld   |    magn_data_218_V    |    pointer   |
+|magn_data_218_V_ap_vld  | out |    1|   ap_vld   |    magn_data_218_V    |    pointer   |
+|magn_data_219_V         | out |   24|   ap_vld   |    magn_data_219_V    |    pointer   |
+|magn_data_219_V_ap_vld  | out |    1|   ap_vld   |    magn_data_219_V    |    pointer   |
+|magn_data_220_V         | out |   24|   ap_vld   |    magn_data_220_V    |    pointer   |
+|magn_data_220_V_ap_vld  | out |    1|   ap_vld   |    magn_data_220_V    |    pointer   |
+|magn_data_221_V         | out |   24|   ap_vld   |    magn_data_221_V    |    pointer   |
+|magn_data_221_V_ap_vld  | out |    1|   ap_vld   |    magn_data_221_V    |    pointer   |
+|magn_data_222_V         | out |   24|   ap_vld   |    magn_data_222_V    |    pointer   |
+|magn_data_222_V_ap_vld  | out |    1|   ap_vld   |    magn_data_222_V    |    pointer   |
+|magn_data_223_V         | out |   24|   ap_vld   |    magn_data_223_V    |    pointer   |
+|magn_data_223_V_ap_vld  | out |    1|   ap_vld   |    magn_data_223_V    |    pointer   |
+|magn_data_224_V         | out |   24|   ap_vld   |    magn_data_224_V    |    pointer   |
+|magn_data_224_V_ap_vld  | out |    1|   ap_vld   |    magn_data_224_V    |    pointer   |
+|magn_data_225_V         | out |   24|   ap_vld   |    magn_data_225_V    |    pointer   |
+|magn_data_225_V_ap_vld  | out |    1|   ap_vld   |    magn_data_225_V    |    pointer   |
+|magn_data_226_V         | out |   24|   ap_vld   |    magn_data_226_V    |    pointer   |
+|magn_data_226_V_ap_vld  | out |    1|   ap_vld   |    magn_data_226_V    |    pointer   |
+|magn_data_227_V         | out |   24|   ap_vld   |    magn_data_227_V    |    pointer   |
+|magn_data_227_V_ap_vld  | out |    1|   ap_vld   |    magn_data_227_V    |    pointer   |
+|magn_data_228_V         | out |   24|   ap_vld   |    magn_data_228_V    |    pointer   |
+|magn_data_228_V_ap_vld  | out |    1|   ap_vld   |    magn_data_228_V    |    pointer   |
+|magn_data_229_V         | out |   24|   ap_vld   |    magn_data_229_V    |    pointer   |
+|magn_data_229_V_ap_vld  | out |    1|   ap_vld   |    magn_data_229_V    |    pointer   |
+|magn_data_230_V         | out |   24|   ap_vld   |    magn_data_230_V    |    pointer   |
+|magn_data_230_V_ap_vld  | out |    1|   ap_vld   |    magn_data_230_V    |    pointer   |
+|magn_data_231_V         | out |   24|   ap_vld   |    magn_data_231_V    |    pointer   |
+|magn_data_231_V_ap_vld  | out |    1|   ap_vld   |    magn_data_231_V    |    pointer   |
+|magn_data_232_V         | out |   24|   ap_vld   |    magn_data_232_V    |    pointer   |
+|magn_data_232_V_ap_vld  | out |    1|   ap_vld   |    magn_data_232_V    |    pointer   |
+|magn_data_233_V         | out |   24|   ap_vld   |    magn_data_233_V    |    pointer   |
+|magn_data_233_V_ap_vld  | out |    1|   ap_vld   |    magn_data_233_V    |    pointer   |
+|magn_data_234_V         | out |   24|   ap_vld   |    magn_data_234_V    |    pointer   |
+|magn_data_234_V_ap_vld  | out |    1|   ap_vld   |    magn_data_234_V    |    pointer   |
+|magn_data_235_V         | out |   24|   ap_vld   |    magn_data_235_V    |    pointer   |
+|magn_data_235_V_ap_vld  | out |    1|   ap_vld   |    magn_data_235_V    |    pointer   |
+|magn_data_236_V         | out |   24|   ap_vld   |    magn_data_236_V    |    pointer   |
+|magn_data_236_V_ap_vld  | out |    1|   ap_vld   |    magn_data_236_V    |    pointer   |
+|magn_data_237_V         | out |   24|   ap_vld   |    magn_data_237_V    |    pointer   |
+|magn_data_237_V_ap_vld  | out |    1|   ap_vld   |    magn_data_237_V    |    pointer   |
+|magn_data_238_V         | out |   24|   ap_vld   |    magn_data_238_V    |    pointer   |
+|magn_data_238_V_ap_vld  | out |    1|   ap_vld   |    magn_data_238_V    |    pointer   |
+|magn_data_239_V         | out |   24|   ap_vld   |    magn_data_239_V    |    pointer   |
+|magn_data_239_V_ap_vld  | out |    1|   ap_vld   |    magn_data_239_V    |    pointer   |
+|magn_data_240_V         | out |   24|   ap_vld   |    magn_data_240_V    |    pointer   |
+|magn_data_240_V_ap_vld  | out |    1|   ap_vld   |    magn_data_240_V    |    pointer   |
+|magn_data_241_V         | out |   24|   ap_vld   |    magn_data_241_V    |    pointer   |
+|magn_data_241_V_ap_vld  | out |    1|   ap_vld   |    magn_data_241_V    |    pointer   |
+|magn_data_242_V         | out |   24|   ap_vld   |    magn_data_242_V    |    pointer   |
+|magn_data_242_V_ap_vld  | out |    1|   ap_vld   |    magn_data_242_V    |    pointer   |
+|magn_data_243_V         | out |   24|   ap_vld   |    magn_data_243_V    |    pointer   |
+|magn_data_243_V_ap_vld  | out |    1|   ap_vld   |    magn_data_243_V    |    pointer   |
+|magn_data_244_V         | out |   24|   ap_vld   |    magn_data_244_V    |    pointer   |
+|magn_data_244_V_ap_vld  | out |    1|   ap_vld   |    magn_data_244_V    |    pointer   |
+|magn_data_245_V         | out |   24|   ap_vld   |    magn_data_245_V    |    pointer   |
+|magn_data_245_V_ap_vld  | out |    1|   ap_vld   |    magn_data_245_V    |    pointer   |
+|magn_data_246_V         | out |   24|   ap_vld   |    magn_data_246_V    |    pointer   |
+|magn_data_246_V_ap_vld  | out |    1|   ap_vld   |    magn_data_246_V    |    pointer   |
+|magn_data_247_V         | out |   24|   ap_vld   |    magn_data_247_V    |    pointer   |
+|magn_data_247_V_ap_vld  | out |    1|   ap_vld   |    magn_data_247_V    |    pointer   |
+|magn_data_248_V         | out |   24|   ap_vld   |    magn_data_248_V    |    pointer   |
+|magn_data_248_V_ap_vld  | out |    1|   ap_vld   |    magn_data_248_V    |    pointer   |
+|magn_data_249_V         | out |   24|   ap_vld   |    magn_data_249_V    |    pointer   |
+|magn_data_249_V_ap_vld  | out |    1|   ap_vld   |    magn_data_249_V    |    pointer   |
+|magn_data_250_V         | out |   24|   ap_vld   |    magn_data_250_V    |    pointer   |
+|magn_data_250_V_ap_vld  | out |    1|   ap_vld   |    magn_data_250_V    |    pointer   |
+|magn_data_251_V         | out |   24|   ap_vld   |    magn_data_251_V    |    pointer   |
+|magn_data_251_V_ap_vld  | out |    1|   ap_vld   |    magn_data_251_V    |    pointer   |
+|magn_data_252_V         | out |   24|   ap_vld   |    magn_data_252_V    |    pointer   |
+|magn_data_252_V_ap_vld  | out |    1|   ap_vld   |    magn_data_252_V    |    pointer   |
+|magn_data_253_V         | out |   24|   ap_vld   |    magn_data_253_V    |    pointer   |
+|magn_data_253_V_ap_vld  | out |    1|   ap_vld   |    magn_data_253_V    |    pointer   |
+|magn_data_254_V         | out |   24|   ap_vld   |    magn_data_254_V    |    pointer   |
+|magn_data_254_V_ap_vld  | out |    1|   ap_vld   |    magn_data_254_V    |    pointer   |
+|magn_data_255_V         | out |   24|   ap_vld   |    magn_data_255_V    |    pointer   |
+|magn_data_255_V_ap_vld  | out |    1|   ap_vld   |    magn_data_255_V    |    pointer   |
++------------------------+-----+-----+------------+-----------------------+--------------+
+

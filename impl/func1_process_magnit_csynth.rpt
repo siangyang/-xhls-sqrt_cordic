@@ -1,0 +1,433 @@
+
+
+================================================================
+== Vivado HLS Report for 'func1_process_magnit'
+================================================================
+* Date:           Tue Dec 22 21:02:17 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        sqrt_CORDIC
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 3.702 ns |   0.63 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       85|       85| 0.425 us | 0.425 us |   85|   85|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------+----------------------+---------+---------+-----------+-----------+-----+-----+----------+
+        |                                  |                      |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline |
+        |             Instance             |        Module        |   min   |   max   |    min    |    max    | min | max |   Type   |
+        +----------------------------------+----------------------+---------+---------+-----------+-----------+-----+-----+----------+
+        |grp_process_magnitude_co_fu_1904  |process_magnitude_co  |       17|       17| 85.000 ns | 85.000 ns |    1|    1| function |
+        +----------------------------------+----------------------+---------+---------+-----------+-----------+-----+-----+----------+
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- L1      |       83|       83|        21|          1|          1|    64|    yes   |
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|     34|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      2|    5421|   3194|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|    350|    -|
+|Register         |        0|      -|     157|     32|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      2|    5578|   3610|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|   ~0  |       5|      6|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------+----------------------+---------+-------+------+------+-----+
+    |             Instance             |        Module        | BRAM_18K| DSP48E|  FF  |  LUT | URAM|
+    +----------------------------------+----------------------+---------+-------+------+------+-----+
+    |grp_process_magnitude_co_fu_1904  |process_magnitude_co  |        0|      2|  1006|  1849|    0|
+    |top_process_magnicud_U5           |top_process_magnicud  |        0|      0|  4415|  1345|    0|
+    +----------------------------------+----------------------+---------+-------+------+------+-----+
+    |Total                             |                      |        0|      2|  5421|  3194|    0|
+    +----------------------------------+----------------------+---------+-------+------+------+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |i_fu_1917_p2             |     +    |      0|  0|  15|           7|           1|
+    |ap_condition_1088        |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_636         |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln40_fu_1911_p2     |   icmp   |      0|  0|  11|           7|           8|
+    |ap_enable_pp0            |    xor   |      0|  0|   2|           1|           2|
+    |ap_enable_reg_pp0_iter1  |    xor   |      0|  0|   2|           2|           1|
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |Total                    |          |      0|  0|  34|          19|          14|
+    +-------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------------+-----+-----------+-----+-----------+
+    |                  Name                  | LUT | Input Size| Bits| Total Bits|
+    +----------------------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                               |   21|          4|    1|          4|
+    |ap_enable_reg_pp0_iter1                 |    9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter20                |    9|          2|    1|          2|
+    |ap_phi_mux_i_0_phi_fu_1762_p4           |    9|          2|    7|         14|
+    |ap_phi_reg_pp0_iter1_phi_ln50_reg_1770  |  293|         65|   18|       1170|
+    |i_0_reg_1758                            |    9|          2|    7|         14|
+    +----------------------------------------+-----+-----------+-----+-----------+
+    |Total                                   |  350|         77|   35|       1206|
+    +----------------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------+----+----+-----+-----------+
+    |                  Name                  | FF | LUT| Bits| Const Bits|
+    +----------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                               |   3|   0|    3|          0|
+    |ap_enable_reg_pp0_iter0                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter10                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter11                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter12                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter13                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter14                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter15                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter16                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter17                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter18                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter19                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter20                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter7                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter8                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter9                 |   1|   0|    1|          0|
+    |ap_phi_reg_pp0_iter1_phi_ln50_reg_1770  |  18|   0|   18|          0|
+    |i_0_reg_1758                            |   7|   0|    7|          0|
+    |i_reg_3093                              |   7|   0|    7|          0|
+    |icmp_ln40_reg_3089                      |   1|   0|    1|          0|
+    |phi_ln50_1_reg_3103                     |  18|   0|   18|          0|
+    |phi_ln50_reg_1770                       |  18|   0|   18|          0|
+    |i_0_reg_1758                            |  64|  32|    7|          0|
+    +----------------------------------------+----+----+-----+-----------+
+    |Total                                   | 157|  32|  100|          0|
+    +----------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+----------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++-----------------------+-----+-----+------------+----------------------+--------------+
+|ap_clk                 |  in |    1| ap_ctrl_hs | func1_process_magnit | return value |
+|ap_rst                 |  in |    1| ap_ctrl_hs | func1_process_magnit | return value |
+|ap_start               |  in |    1| ap_ctrl_hs | func1_process_magnit | return value |
+|ap_done                | out |    1| ap_ctrl_hs | func1_process_magnit | return value |
+|ap_idle                | out |    1| ap_ctrl_hs | func1_process_magnit | return value |
+|ap_ready               | out |    1| ap_ctrl_hs | func1_process_magnit | return value |
+|real_data_0_V_read     |  in |   18|   ap_none  |  real_data_0_V_read  |    scalar    |
+|real_data_1_V_read     |  in |   18|   ap_none  |  real_data_1_V_read  |    scalar    |
+|real_data_2_V_read     |  in |   18|   ap_none  |  real_data_2_V_read  |    scalar    |
+|real_data_3_V_read     |  in |   18|   ap_none  |  real_data_3_V_read  |    scalar    |
+|real_data_4_V_read     |  in |   18|   ap_none  |  real_data_4_V_read  |    scalar    |
+|real_data_5_V_read     |  in |   18|   ap_none  |  real_data_5_V_read  |    scalar    |
+|real_data_6_V_read     |  in |   18|   ap_none  |  real_data_6_V_read  |    scalar    |
+|real_data_7_V_read     |  in |   18|   ap_none  |  real_data_7_V_read  |    scalar    |
+|real_data_8_V_read     |  in |   18|   ap_none  |  real_data_8_V_read  |    scalar    |
+|real_data_9_V_read     |  in |   18|   ap_none  |  real_data_9_V_read  |    scalar    |
+|real_data_10_V_read    |  in |   18|   ap_none  |  real_data_10_V_read |    scalar    |
+|real_data_11_V_read    |  in |   18|   ap_none  |  real_data_11_V_read |    scalar    |
+|real_data_12_V_read    |  in |   18|   ap_none  |  real_data_12_V_read |    scalar    |
+|real_data_13_V_read    |  in |   18|   ap_none  |  real_data_13_V_read |    scalar    |
+|real_data_14_V_read    |  in |   18|   ap_none  |  real_data_14_V_read |    scalar    |
+|real_data_15_V_read    |  in |   18|   ap_none  |  real_data_15_V_read |    scalar    |
+|real_data_16_V_read    |  in |   18|   ap_none  |  real_data_16_V_read |    scalar    |
+|real_data_17_V_read    |  in |   18|   ap_none  |  real_data_17_V_read |    scalar    |
+|real_data_18_V_read    |  in |   18|   ap_none  |  real_data_18_V_read |    scalar    |
+|real_data_19_V_read    |  in |   18|   ap_none  |  real_data_19_V_read |    scalar    |
+|real_data_20_V_read    |  in |   18|   ap_none  |  real_data_20_V_read |    scalar    |
+|real_data_21_V_read    |  in |   18|   ap_none  |  real_data_21_V_read |    scalar    |
+|real_data_22_V_read    |  in |   18|   ap_none  |  real_data_22_V_read |    scalar    |
+|real_data_23_V_read    |  in |   18|   ap_none  |  real_data_23_V_read |    scalar    |
+|real_data_24_V_read    |  in |   18|   ap_none  |  real_data_24_V_read |    scalar    |
+|real_data_25_V_read    |  in |   18|   ap_none  |  real_data_25_V_read |    scalar    |
+|real_data_26_V_read    |  in |   18|   ap_none  |  real_data_26_V_read |    scalar    |
+|real_data_27_V_read    |  in |   18|   ap_none  |  real_data_27_V_read |    scalar    |
+|real_data_28_V_read    |  in |   18|   ap_none  |  real_data_28_V_read |    scalar    |
+|real_data_29_V_read    |  in |   18|   ap_none  |  real_data_29_V_read |    scalar    |
+|real_data_30_V_read    |  in |   18|   ap_none  |  real_data_30_V_read |    scalar    |
+|real_data_31_V_read    |  in |   18|   ap_none  |  real_data_31_V_read |    scalar    |
+|real_data_32_V_read    |  in |   18|   ap_none  |  real_data_32_V_read |    scalar    |
+|real_data_33_V_read    |  in |   18|   ap_none  |  real_data_33_V_read |    scalar    |
+|real_data_34_V_read    |  in |   18|   ap_none  |  real_data_34_V_read |    scalar    |
+|real_data_35_V_read    |  in |   18|   ap_none  |  real_data_35_V_read |    scalar    |
+|real_data_36_V_read    |  in |   18|   ap_none  |  real_data_36_V_read |    scalar    |
+|real_data_37_V_read    |  in |   18|   ap_none  |  real_data_37_V_read |    scalar    |
+|real_data_38_V_read    |  in |   18|   ap_none  |  real_data_38_V_read |    scalar    |
+|real_data_39_V_read    |  in |   18|   ap_none  |  real_data_39_V_read |    scalar    |
+|real_data_40_V_read    |  in |   18|   ap_none  |  real_data_40_V_read |    scalar    |
+|real_data_41_V_read    |  in |   18|   ap_none  |  real_data_41_V_read |    scalar    |
+|real_data_42_V_read    |  in |   18|   ap_none  |  real_data_42_V_read |    scalar    |
+|real_data_43_V_read    |  in |   18|   ap_none  |  real_data_43_V_read |    scalar    |
+|real_data_44_V_read    |  in |   18|   ap_none  |  real_data_44_V_read |    scalar    |
+|real_data_45_V_read    |  in |   18|   ap_none  |  real_data_45_V_read |    scalar    |
+|real_data_46_V_read    |  in |   18|   ap_none  |  real_data_46_V_read |    scalar    |
+|real_data_47_V_read    |  in |   18|   ap_none  |  real_data_47_V_read |    scalar    |
+|real_data_48_V_read    |  in |   18|   ap_none  |  real_data_48_V_read |    scalar    |
+|real_data_49_V_read    |  in |   18|   ap_none  |  real_data_49_V_read |    scalar    |
+|real_data_50_V_read    |  in |   18|   ap_none  |  real_data_50_V_read |    scalar    |
+|real_data_51_V_read    |  in |   18|   ap_none  |  real_data_51_V_read |    scalar    |
+|real_data_52_V_read    |  in |   18|   ap_none  |  real_data_52_V_read |    scalar    |
+|real_data_53_V_read    |  in |   18|   ap_none  |  real_data_53_V_read |    scalar    |
+|real_data_54_V_read    |  in |   18|   ap_none  |  real_data_54_V_read |    scalar    |
+|real_data_55_V_read    |  in |   18|   ap_none  |  real_data_55_V_read |    scalar    |
+|real_data_56_V_read    |  in |   18|   ap_none  |  real_data_56_V_read |    scalar    |
+|real_data_57_V_read    |  in |   18|   ap_none  |  real_data_57_V_read |    scalar    |
+|real_data_58_V_read    |  in |   18|   ap_none  |  real_data_58_V_read |    scalar    |
+|real_data_59_V_read    |  in |   18|   ap_none  |  real_data_59_V_read |    scalar    |
+|real_data_60_V_read    |  in |   18|   ap_none  |  real_data_60_V_read |    scalar    |
+|real_data_61_V_read    |  in |   18|   ap_none  |  real_data_61_V_read |    scalar    |
+|real_data_62_V_read    |  in |   18|   ap_none  |  real_data_62_V_read |    scalar    |
+|real_data_63_V_read    |  in |   18|   ap_none  |  real_data_63_V_read |    scalar    |
+|imag_data_0_V_read     |  in |   18|   ap_none  |  imag_data_0_V_read  |    scalar    |
+|imag_data_1_V_read     |  in |   18|   ap_none  |  imag_data_1_V_read  |    scalar    |
+|imag_data_2_V_read     |  in |   18|   ap_none  |  imag_data_2_V_read  |    scalar    |
+|imag_data_3_V_read     |  in |   18|   ap_none  |  imag_data_3_V_read  |    scalar    |
+|imag_data_4_V_read     |  in |   18|   ap_none  |  imag_data_4_V_read  |    scalar    |
+|imag_data_5_V_read     |  in |   18|   ap_none  |  imag_data_5_V_read  |    scalar    |
+|imag_data_6_V_read     |  in |   18|   ap_none  |  imag_data_6_V_read  |    scalar    |
+|imag_data_7_V_read     |  in |   18|   ap_none  |  imag_data_7_V_read  |    scalar    |
+|imag_data_8_V_read     |  in |   18|   ap_none  |  imag_data_8_V_read  |    scalar    |
+|imag_data_9_V_read     |  in |   18|   ap_none  |  imag_data_9_V_read  |    scalar    |
+|imag_data_10_V_read    |  in |   18|   ap_none  |  imag_data_10_V_read |    scalar    |
+|imag_data_11_V_read    |  in |   18|   ap_none  |  imag_data_11_V_read |    scalar    |
+|imag_data_12_V_read    |  in |   18|   ap_none  |  imag_data_12_V_read |    scalar    |
+|imag_data_13_V_read    |  in |   18|   ap_none  |  imag_data_13_V_read |    scalar    |
+|imag_data_14_V_read    |  in |   18|   ap_none  |  imag_data_14_V_read |    scalar    |
+|imag_data_15_V_read    |  in |   18|   ap_none  |  imag_data_15_V_read |    scalar    |
+|imag_data_16_V_read    |  in |   18|   ap_none  |  imag_data_16_V_read |    scalar    |
+|imag_data_17_V_read    |  in |   18|   ap_none  |  imag_data_17_V_read |    scalar    |
+|imag_data_18_V_read    |  in |   18|   ap_none  |  imag_data_18_V_read |    scalar    |
+|imag_data_19_V_read    |  in |   18|   ap_none  |  imag_data_19_V_read |    scalar    |
+|imag_data_20_V_read    |  in |   18|   ap_none  |  imag_data_20_V_read |    scalar    |
+|imag_data_21_V_read    |  in |   18|   ap_none  |  imag_data_21_V_read |    scalar    |
+|imag_data_22_V_read    |  in |   18|   ap_none  |  imag_data_22_V_read |    scalar    |
+|imag_data_23_V_read    |  in |   18|   ap_none  |  imag_data_23_V_read |    scalar    |
+|imag_data_24_V_read    |  in |   18|   ap_none  |  imag_data_24_V_read |    scalar    |
+|imag_data_25_V_read    |  in |   18|   ap_none  |  imag_data_25_V_read |    scalar    |
+|imag_data_26_V_read    |  in |   18|   ap_none  |  imag_data_26_V_read |    scalar    |
+|imag_data_27_V_read    |  in |   18|   ap_none  |  imag_data_27_V_read |    scalar    |
+|imag_data_28_V_read    |  in |   18|   ap_none  |  imag_data_28_V_read |    scalar    |
+|imag_data_29_V_read    |  in |   18|   ap_none  |  imag_data_29_V_read |    scalar    |
+|imag_data_30_V_read    |  in |   18|   ap_none  |  imag_data_30_V_read |    scalar    |
+|imag_data_31_V_read    |  in |   18|   ap_none  |  imag_data_31_V_read |    scalar    |
+|imag_data_32_V_read    |  in |   18|   ap_none  |  imag_data_32_V_read |    scalar    |
+|imag_data_33_V_read    |  in |   18|   ap_none  |  imag_data_33_V_read |    scalar    |
+|imag_data_34_V_read    |  in |   18|   ap_none  |  imag_data_34_V_read |    scalar    |
+|imag_data_35_V_read    |  in |   18|   ap_none  |  imag_data_35_V_read |    scalar    |
+|imag_data_36_V_read    |  in |   18|   ap_none  |  imag_data_36_V_read |    scalar    |
+|imag_data_37_V_read    |  in |   18|   ap_none  |  imag_data_37_V_read |    scalar    |
+|imag_data_38_V_read    |  in |   18|   ap_none  |  imag_data_38_V_read |    scalar    |
+|imag_data_39_V_read    |  in |   18|   ap_none  |  imag_data_39_V_read |    scalar    |
+|imag_data_40_V_read    |  in |   18|   ap_none  |  imag_data_40_V_read |    scalar    |
+|imag_data_41_V_read    |  in |   18|   ap_none  |  imag_data_41_V_read |    scalar    |
+|imag_data_42_V_read    |  in |   18|   ap_none  |  imag_data_42_V_read |    scalar    |
+|imag_data_43_V_read    |  in |   18|   ap_none  |  imag_data_43_V_read |    scalar    |
+|imag_data_44_V_read    |  in |   18|   ap_none  |  imag_data_44_V_read |    scalar    |
+|imag_data_45_V_read    |  in |   18|   ap_none  |  imag_data_45_V_read |    scalar    |
+|imag_data_46_V_read    |  in |   18|   ap_none  |  imag_data_46_V_read |    scalar    |
+|imag_data_47_V_read    |  in |   18|   ap_none  |  imag_data_47_V_read |    scalar    |
+|imag_data_48_V_read    |  in |   18|   ap_none  |  imag_data_48_V_read |    scalar    |
+|imag_data_49_V_read    |  in |   18|   ap_none  |  imag_data_49_V_read |    scalar    |
+|imag_data_50_V_read    |  in |   18|   ap_none  |  imag_data_50_V_read |    scalar    |
+|imag_data_51_V_read    |  in |   18|   ap_none  |  imag_data_51_V_read |    scalar    |
+|imag_data_52_V_read    |  in |   18|   ap_none  |  imag_data_52_V_read |    scalar    |
+|imag_data_53_V_read    |  in |   18|   ap_none  |  imag_data_53_V_read |    scalar    |
+|imag_data_54_V_read    |  in |   18|   ap_none  |  imag_data_54_V_read |    scalar    |
+|imag_data_55_V_read    |  in |   18|   ap_none  |  imag_data_55_V_read |    scalar    |
+|imag_data_56_V_read    |  in |   18|   ap_none  |  imag_data_56_V_read |    scalar    |
+|imag_data_57_V_read    |  in |   18|   ap_none  |  imag_data_57_V_read |    scalar    |
+|imag_data_58_V_read    |  in |   18|   ap_none  |  imag_data_58_V_read |    scalar    |
+|imag_data_59_V_read    |  in |   18|   ap_none  |  imag_data_59_V_read |    scalar    |
+|imag_data_60_V_read    |  in |   18|   ap_none  |  imag_data_60_V_read |    scalar    |
+|imag_data_61_V_read    |  in |   18|   ap_none  |  imag_data_61_V_read |    scalar    |
+|imag_data_62_V_read    |  in |   18|   ap_none  |  imag_data_62_V_read |    scalar    |
+|imag_data_63_V_read    |  in |   18|   ap_none  |  imag_data_63_V_read |    scalar    |
+|magn_data_0_V          | out |   24|   ap_vld   |     magn_data_0_V    |    pointer   |
+|magn_data_0_V_ap_vld   | out |    1|   ap_vld   |     magn_data_0_V    |    pointer   |
+|magn_data_1_V          | out |   24|   ap_vld   |     magn_data_1_V    |    pointer   |
+|magn_data_1_V_ap_vld   | out |    1|   ap_vld   |     magn_data_1_V    |    pointer   |
+|magn_data_2_V          | out |   24|   ap_vld   |     magn_data_2_V    |    pointer   |
+|magn_data_2_V_ap_vld   | out |    1|   ap_vld   |     magn_data_2_V    |    pointer   |
+|magn_data_3_V          | out |   24|   ap_vld   |     magn_data_3_V    |    pointer   |
+|magn_data_3_V_ap_vld   | out |    1|   ap_vld   |     magn_data_3_V    |    pointer   |
+|magn_data_4_V          | out |   24|   ap_vld   |     magn_data_4_V    |    pointer   |
+|magn_data_4_V_ap_vld   | out |    1|   ap_vld   |     magn_data_4_V    |    pointer   |
+|magn_data_5_V          | out |   24|   ap_vld   |     magn_data_5_V    |    pointer   |
+|magn_data_5_V_ap_vld   | out |    1|   ap_vld   |     magn_data_5_V    |    pointer   |
+|magn_data_6_V          | out |   24|   ap_vld   |     magn_data_6_V    |    pointer   |
+|magn_data_6_V_ap_vld   | out |    1|   ap_vld   |     magn_data_6_V    |    pointer   |
+|magn_data_7_V          | out |   24|   ap_vld   |     magn_data_7_V    |    pointer   |
+|magn_data_7_V_ap_vld   | out |    1|   ap_vld   |     magn_data_7_V    |    pointer   |
+|magn_data_8_V          | out |   24|   ap_vld   |     magn_data_8_V    |    pointer   |
+|magn_data_8_V_ap_vld   | out |    1|   ap_vld   |     magn_data_8_V    |    pointer   |
+|magn_data_9_V          | out |   24|   ap_vld   |     magn_data_9_V    |    pointer   |
+|magn_data_9_V_ap_vld   | out |    1|   ap_vld   |     magn_data_9_V    |    pointer   |
+|magn_data_10_V         | out |   24|   ap_vld   |    magn_data_10_V    |    pointer   |
+|magn_data_10_V_ap_vld  | out |    1|   ap_vld   |    magn_data_10_V    |    pointer   |
+|magn_data_11_V         | out |   24|   ap_vld   |    magn_data_11_V    |    pointer   |
+|magn_data_11_V_ap_vld  | out |    1|   ap_vld   |    magn_data_11_V    |    pointer   |
+|magn_data_12_V         | out |   24|   ap_vld   |    magn_data_12_V    |    pointer   |
+|magn_data_12_V_ap_vld  | out |    1|   ap_vld   |    magn_data_12_V    |    pointer   |
+|magn_data_13_V         | out |   24|   ap_vld   |    magn_data_13_V    |    pointer   |
+|magn_data_13_V_ap_vld  | out |    1|   ap_vld   |    magn_data_13_V    |    pointer   |
+|magn_data_14_V         | out |   24|   ap_vld   |    magn_data_14_V    |    pointer   |
+|magn_data_14_V_ap_vld  | out |    1|   ap_vld   |    magn_data_14_V    |    pointer   |
+|magn_data_15_V         | out |   24|   ap_vld   |    magn_data_15_V    |    pointer   |
+|magn_data_15_V_ap_vld  | out |    1|   ap_vld   |    magn_data_15_V    |    pointer   |
+|magn_data_16_V         | out |   24|   ap_vld   |    magn_data_16_V    |    pointer   |
+|magn_data_16_V_ap_vld  | out |    1|   ap_vld   |    magn_data_16_V    |    pointer   |
+|magn_data_17_V         | out |   24|   ap_vld   |    magn_data_17_V    |    pointer   |
+|magn_data_17_V_ap_vld  | out |    1|   ap_vld   |    magn_data_17_V    |    pointer   |
+|magn_data_18_V         | out |   24|   ap_vld   |    magn_data_18_V    |    pointer   |
+|magn_data_18_V_ap_vld  | out |    1|   ap_vld   |    magn_data_18_V    |    pointer   |
+|magn_data_19_V         | out |   24|   ap_vld   |    magn_data_19_V    |    pointer   |
+|magn_data_19_V_ap_vld  | out |    1|   ap_vld   |    magn_data_19_V    |    pointer   |
+|magn_data_20_V         | out |   24|   ap_vld   |    magn_data_20_V    |    pointer   |
+|magn_data_20_V_ap_vld  | out |    1|   ap_vld   |    magn_data_20_V    |    pointer   |
+|magn_data_21_V         | out |   24|   ap_vld   |    magn_data_21_V    |    pointer   |
+|magn_data_21_V_ap_vld  | out |    1|   ap_vld   |    magn_data_21_V    |    pointer   |
+|magn_data_22_V         | out |   24|   ap_vld   |    magn_data_22_V    |    pointer   |
+|magn_data_22_V_ap_vld  | out |    1|   ap_vld   |    magn_data_22_V    |    pointer   |
+|magn_data_23_V         | out |   24|   ap_vld   |    magn_data_23_V    |    pointer   |
+|magn_data_23_V_ap_vld  | out |    1|   ap_vld   |    magn_data_23_V    |    pointer   |
+|magn_data_24_V         | out |   24|   ap_vld   |    magn_data_24_V    |    pointer   |
+|magn_data_24_V_ap_vld  | out |    1|   ap_vld   |    magn_data_24_V    |    pointer   |
+|magn_data_25_V         | out |   24|   ap_vld   |    magn_data_25_V    |    pointer   |
+|magn_data_25_V_ap_vld  | out |    1|   ap_vld   |    magn_data_25_V    |    pointer   |
+|magn_data_26_V         | out |   24|   ap_vld   |    magn_data_26_V    |    pointer   |
+|magn_data_26_V_ap_vld  | out |    1|   ap_vld   |    magn_data_26_V    |    pointer   |
+|magn_data_27_V         | out |   24|   ap_vld   |    magn_data_27_V    |    pointer   |
+|magn_data_27_V_ap_vld  | out |    1|   ap_vld   |    magn_data_27_V    |    pointer   |
+|magn_data_28_V         | out |   24|   ap_vld   |    magn_data_28_V    |    pointer   |
+|magn_data_28_V_ap_vld  | out |    1|   ap_vld   |    magn_data_28_V    |    pointer   |
+|magn_data_29_V         | out |   24|   ap_vld   |    magn_data_29_V    |    pointer   |
+|magn_data_29_V_ap_vld  | out |    1|   ap_vld   |    magn_data_29_V    |    pointer   |
+|magn_data_30_V         | out |   24|   ap_vld   |    magn_data_30_V    |    pointer   |
+|magn_data_30_V_ap_vld  | out |    1|   ap_vld   |    magn_data_30_V    |    pointer   |
+|magn_data_31_V         | out |   24|   ap_vld   |    magn_data_31_V    |    pointer   |
+|magn_data_31_V_ap_vld  | out |    1|   ap_vld   |    magn_data_31_V    |    pointer   |
+|magn_data_32_V         | out |   24|   ap_vld   |    magn_data_32_V    |    pointer   |
+|magn_data_32_V_ap_vld  | out |    1|   ap_vld   |    magn_data_32_V    |    pointer   |
+|magn_data_33_V         | out |   24|   ap_vld   |    magn_data_33_V    |    pointer   |
+|magn_data_33_V_ap_vld  | out |    1|   ap_vld   |    magn_data_33_V    |    pointer   |
+|magn_data_34_V         | out |   24|   ap_vld   |    magn_data_34_V    |    pointer   |
+|magn_data_34_V_ap_vld  | out |    1|   ap_vld   |    magn_data_34_V    |    pointer   |
+|magn_data_35_V         | out |   24|   ap_vld   |    magn_data_35_V    |    pointer   |
+|magn_data_35_V_ap_vld  | out |    1|   ap_vld   |    magn_data_35_V    |    pointer   |
+|magn_data_36_V         | out |   24|   ap_vld   |    magn_data_36_V    |    pointer   |
+|magn_data_36_V_ap_vld  | out |    1|   ap_vld   |    magn_data_36_V    |    pointer   |
+|magn_data_37_V         | out |   24|   ap_vld   |    magn_data_37_V    |    pointer   |
+|magn_data_37_V_ap_vld  | out |    1|   ap_vld   |    magn_data_37_V    |    pointer   |
+|magn_data_38_V         | out |   24|   ap_vld   |    magn_data_38_V    |    pointer   |
+|magn_data_38_V_ap_vld  | out |    1|   ap_vld   |    magn_data_38_V    |    pointer   |
+|magn_data_39_V         | out |   24|   ap_vld   |    magn_data_39_V    |    pointer   |
+|magn_data_39_V_ap_vld  | out |    1|   ap_vld   |    magn_data_39_V    |    pointer   |
+|magn_data_40_V         | out |   24|   ap_vld   |    magn_data_40_V    |    pointer   |
+|magn_data_40_V_ap_vld  | out |    1|   ap_vld   |    magn_data_40_V    |    pointer   |
+|magn_data_41_V         | out |   24|   ap_vld   |    magn_data_41_V    |    pointer   |
+|magn_data_41_V_ap_vld  | out |    1|   ap_vld   |    magn_data_41_V    |    pointer   |
+|magn_data_42_V         | out |   24|   ap_vld   |    magn_data_42_V    |    pointer   |
+|magn_data_42_V_ap_vld  | out |    1|   ap_vld   |    magn_data_42_V    |    pointer   |
+|magn_data_43_V         | out |   24|   ap_vld   |    magn_data_43_V    |    pointer   |
+|magn_data_43_V_ap_vld  | out |    1|   ap_vld   |    magn_data_43_V    |    pointer   |
+|magn_data_44_V         | out |   24|   ap_vld   |    magn_data_44_V    |    pointer   |
+|magn_data_44_V_ap_vld  | out |    1|   ap_vld   |    magn_data_44_V    |    pointer   |
+|magn_data_45_V         | out |   24|   ap_vld   |    magn_data_45_V    |    pointer   |
+|magn_data_45_V_ap_vld  | out |    1|   ap_vld   |    magn_data_45_V    |    pointer   |
+|magn_data_46_V         | out |   24|   ap_vld   |    magn_data_46_V    |    pointer   |
+|magn_data_46_V_ap_vld  | out |    1|   ap_vld   |    magn_data_46_V    |    pointer   |
+|magn_data_47_V         | out |   24|   ap_vld   |    magn_data_47_V    |    pointer   |
+|magn_data_47_V_ap_vld  | out |    1|   ap_vld   |    magn_data_47_V    |    pointer   |
+|magn_data_48_V         | out |   24|   ap_vld   |    magn_data_48_V    |    pointer   |
+|magn_data_48_V_ap_vld  | out |    1|   ap_vld   |    magn_data_48_V    |    pointer   |
+|magn_data_49_V         | out |   24|   ap_vld   |    magn_data_49_V    |    pointer   |
+|magn_data_49_V_ap_vld  | out |    1|   ap_vld   |    magn_data_49_V    |    pointer   |
+|magn_data_50_V         | out |   24|   ap_vld   |    magn_data_50_V    |    pointer   |
+|magn_data_50_V_ap_vld  | out |    1|   ap_vld   |    magn_data_50_V    |    pointer   |
+|magn_data_51_V         | out |   24|   ap_vld   |    magn_data_51_V    |    pointer   |
+|magn_data_51_V_ap_vld  | out |    1|   ap_vld   |    magn_data_51_V    |    pointer   |
+|magn_data_52_V         | out |   24|   ap_vld   |    magn_data_52_V    |    pointer   |
+|magn_data_52_V_ap_vld  | out |    1|   ap_vld   |    magn_data_52_V    |    pointer   |
+|magn_data_53_V         | out |   24|   ap_vld   |    magn_data_53_V    |    pointer   |
+|magn_data_53_V_ap_vld  | out |    1|   ap_vld   |    magn_data_53_V    |    pointer   |
+|magn_data_54_V         | out |   24|   ap_vld   |    magn_data_54_V    |    pointer   |
+|magn_data_54_V_ap_vld  | out |    1|   ap_vld   |    magn_data_54_V    |    pointer   |
+|magn_data_55_V         | out |   24|   ap_vld   |    magn_data_55_V    |    pointer   |
+|magn_data_55_V_ap_vld  | out |    1|   ap_vld   |    magn_data_55_V    |    pointer   |
+|magn_data_56_V         | out |   24|   ap_vld   |    magn_data_56_V    |    pointer   |
+|magn_data_56_V_ap_vld  | out |    1|   ap_vld   |    magn_data_56_V    |    pointer   |
+|magn_data_57_V         | out |   24|   ap_vld   |    magn_data_57_V    |    pointer   |
+|magn_data_57_V_ap_vld  | out |    1|   ap_vld   |    magn_data_57_V    |    pointer   |
+|magn_data_58_V         | out |   24|   ap_vld   |    magn_data_58_V    |    pointer   |
+|magn_data_58_V_ap_vld  | out |    1|   ap_vld   |    magn_data_58_V    |    pointer   |
+|magn_data_59_V         | out |   24|   ap_vld   |    magn_data_59_V    |    pointer   |
+|magn_data_59_V_ap_vld  | out |    1|   ap_vld   |    magn_data_59_V    |    pointer   |
+|magn_data_60_V         | out |   24|   ap_vld   |    magn_data_60_V    |    pointer   |
+|magn_data_60_V_ap_vld  | out |    1|   ap_vld   |    magn_data_60_V    |    pointer   |
+|magn_data_61_V         | out |   24|   ap_vld   |    magn_data_61_V    |    pointer   |
+|magn_data_61_V_ap_vld  | out |    1|   ap_vld   |    magn_data_61_V    |    pointer   |
+|magn_data_62_V         | out |   24|   ap_vld   |    magn_data_62_V    |    pointer   |
+|magn_data_62_V_ap_vld  | out |    1|   ap_vld   |    magn_data_62_V    |    pointer   |
+|magn_data_63_V         | out |   24|   ap_vld   |    magn_data_63_V    |    pointer   |
+|magn_data_63_V_ap_vld  | out |    1|   ap_vld   |    magn_data_63_V    |    pointer   |
++-----------------------+-----+-----+------------+----------------------+--------------+
+
